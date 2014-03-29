@@ -1,4 +1,0 @@
-cbn:
-    resource: "@CBNBundle/Resources/config/routing.php"
-    prefix:   /
-
