@@ -9,7 +9,7 @@ define( 'PATH_SRC', PATH_ROOT . '/src' );
 define( 'PATH_VENDOR', PATH_ROOT . '/vendor' );
 define( 'PATH_VIEWS', PATH_SRC . '/views' );
 
-ini_set('display_errors', 0);
+ini_set('display_errors', 1);
 
 require_once PATH_VENDOR . '/autoload.php';
 
