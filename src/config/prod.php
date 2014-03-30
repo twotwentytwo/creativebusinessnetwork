@@ -25,9 +25,9 @@ $app['twig.options.cache'] = $app['cache.path'] . '/twig';
 $app['db.options'] = array(
 	'driver'	=> 'pdo_mysql',
 	'host'		=> 'localhost',
-	'dbname'	=> '[YOUR_DB]',
-	'user'		=> '[YOUR_DB_USER]',
-	'password'	=> '[YOUR_DB_PASS]',
+	'dbname'	=> 'silex_test',
+	'user'		=> 'test',
+	'password'	=> 'test',
 );
 
 // User.
