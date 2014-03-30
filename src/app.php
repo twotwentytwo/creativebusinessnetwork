@@ -2,7 +2,6 @@
 
 use Silex\Provider\FormServiceProvider;
 use Silex\Provider\HttpCacheServiceProvider;
-use Silex\Provider\MonologServiceProvider;
 use Silex\Provider\SecurityServiceProvider;
 use Silex\Provider\SessionServiceProvider;
 use Silex\Provider\TranslationServiceProvider;
@@ -56,13 +55,6 @@ $app['translator'] = $app->share($app->extend('translator', function($translator
     $translator->addResource( 'yaml', PATH_LOCALES . '/en.yml', 'en' );
     return $translator;
 }));
-
-// Log definition.
-$app->register(new MonologServiceProvider(), array(
-    'monolog.logfile' => PATH_LOG . '/app.log',
-    'monolog.name'  => 'app',
-    'monolog.level'   => 300 // = Logger::WARNING
-));
 
 // Template system definition.
 $app->register(new TwigServiceProvider(), array(

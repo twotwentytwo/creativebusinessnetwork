@@ -6,7 +6,6 @@
 	"require": {
 		"php"					: ">=5.3.3",
 		"doctrine/dbal"			: "~2.3",
-		"monolog/monolog"		: "~1.0",
 		"silex/silex"			: "~1.2",
 		"symfony/config"		: "~2.2",
 		"symfony/console"		: "~2.2",

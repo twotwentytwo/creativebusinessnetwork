@@ -5,6 +5,7 @@
 
 	<h1>{{ 'Login'|trans }}</h1>
 
+<p>For test: username: test password: password</p>
 	{% if error %}
 		<div class="alert alert-error">
 			{{ error }}
