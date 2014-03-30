@@ -1,7 +1,6 @@
 cache/*
 log/*
 vendor/*
-public/static/dev/styles
 nbproject/*
 composer.phar
 composer.lock
