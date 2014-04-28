@@ -6,7 +6,12 @@
             HOME PAGE
         </div><!--
         --><div class="g g-l-1-2 g-xl-2-3">
-            SIDEBAR
+            <p>USERS IN DB:</p>
+            <ul>
+                @foreach($data->users as $user)
+                    <li>{{ $user->name }}</li>
+                @endforeach
+            </ul>
         </div><!--
     --></div>
 @stop

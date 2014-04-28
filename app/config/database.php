@@ -46,42 +46,18 @@ return array(
 
 	'connections' => array(
 
-		'sqlite' => array(
-			'driver'   => 'sqlite',
-			'database' => __DIR__.'/../database/production.sqlite',
-			'prefix'   => '',
-		),
-
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => 'localhost',
-			'database'  => 'database',
-			'username'  => 'root',
-			'password'  => '',
+			'host'      => (isset($_SERVER['RDS_HOSTNAME'])) ? $_SERVER['RDS_HOSTNAME'] : null,
+			'port'		=> (isset($_SERVER['RDS_PORT'])) ? $_SERVER['RDS_PORT'] : null,
+			'database'  => (isset($_SERVER['RDS_DB_NAME'])) ? $_SERVER['RDS_DB_NAME'] : null,
+			'username'  => (isset($_SERVER['RDS_USERNAME'])) ? $_SERVER['RDS_USERNAME'] : null,
+			'password'  => (isset($_SERVER['RDS_PASSWORD'])) ? $_SERVER['RDS_PASSWORD'] : null,
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
 		),
 
-		'pgsql' => array(
-			'driver'   => 'pgsql',
-			'host'     => 'localhost',
-			'database' => 'database',
-			'username' => 'root',
-			'password' => '',
-			'charset'  => 'utf8',
-			'prefix'   => '',
-			'schema'   => 'public',
-		),
-
-		'sqlsrv' => array(
-			'driver'   => 'sqlsrv',
-			'host'     => 'localhost',
-			'database' => 'database',
-			'username' => 'root',
-			'password' => '',
-			'prefix'   => '',
-		),
 
 	),
 
@@ -97,28 +73,5 @@ return array(
 	*/
 
 	'migrations' => 'migrations',
-
-	/*
-	|--------------------------------------------------------------------------
-	| Redis Databases
-	|--------------------------------------------------------------------------
-	|
-	| Redis is an open source, fast, and advanced key-value store that also
-	| provides a richer set of commands than a typical key-value systems
-	| such as APC or Memcached. Laravel makes it easy to dig right in.
-	|
-	*/
-
-	'redis' => array(
-
-		'cluster' => false,
-
-		'default' => array(
-			'host'     => '127.0.0.1',
-			'port'     => 6379,
-			'database' => 0,
-		),
-
-	),
 
 );
