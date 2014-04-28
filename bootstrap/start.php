@@ -23,12 +23,19 @@ $app = new Illuminate\Foundation\Application;
 | given environment, then we will automatically detect it for you.
 |
 */
-
 $env = $app->detectEnvironment(array(
 
-	'local' => array('your-machine-name'),
+    'local' => array('precise32'),
+    'beta' => array('ip-172-31-34-45'),
 
 ));
+
+/*
+$env = $app->detectEnvironment(function()
+{
+    return isset($_SERVER['LARAVEL_ENV']) ? $_SERVER['LARAVEL_ENV'] : 'production';
+});
+*/
 
 /*
 |--------------------------------------------------------------------------

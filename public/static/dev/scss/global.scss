@@ -1,7 +1,20 @@
-@import 'shared/variables';
+
+// globals
+@import 'global/normalize.scss';
+@import 'global/bootstrap.scss';
+@import 'global/variables.scss';
+@import 'global/mixins.scss';
+
+// components
+@import 'components/base.scss';
+@import 'components/typography.scss';
+@import 'components/grid.scss';
+@import 'components/code.scss';
+@import 'components/highlight.scss';
+@import 'components/lists.scss';
+// print
+@import 'global/print.scss';
 
 body {
-    background: $bg;
-    padding: 64px;
-    color: $text;
+    padding: 40px;
 }

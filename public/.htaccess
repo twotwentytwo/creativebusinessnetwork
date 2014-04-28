@@ -1,3 +1,5 @@
+SetEnv LARAVEL_ENV local
+
 SetOutputFilter DEFLATE
 
 <IfModule mod_rewrite.c>

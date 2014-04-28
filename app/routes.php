@@ -11,7 +11,6 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('hello');
-});
+Route::get('/', array('uses' => 'HomeController@showHome','as' => 'home'));
+Route::get('/styleguide', array('uses' => 'HomeController@styleguide','as' => 'styleguide'));
+Route::get('/404', array('uses' => 'HomeController@show404','as' => '404'));

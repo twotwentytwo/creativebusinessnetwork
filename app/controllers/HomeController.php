@@ -15,9 +15,24 @@ class HomeController extends BaseController {
 	|
 	*/
 
-	public function showWelcome()
-	{
-		return View::make('hello');
-	}
+    public function showHome($name = null)
+    {
+        $this->data->highlighted = 'home';
 
+        return View::make('home.show')
+            ->with(array('data' => $this->data));
+    }
+
+    public function styleguide()
+    {
+
+        return View::make('home.styleguide')
+            ->with(array('data' => $this->data));
+    }
+
+    public function show404()
+    {
+        return View::make('home.404')
+            ->with(array('data' => $this->data));
+    }
 }

@@ -2,6 +2,8 @@
 
 return array(
 
+    'static_version' => '0.0.1',
+    'publish_path' => dirname(__FILE__) . '/../../../test',
 	/*
 	|--------------------------------------------------------------------------
 	| Application Debug Mode
