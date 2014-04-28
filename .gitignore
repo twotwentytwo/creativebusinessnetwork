@@ -1,8 +1,8 @@
-cache/*
-log/*
-vendor/*
-nbproject/*
+/bootstrap/compiled.php
+/vendor
 composer.phar
 composer.lock
-node_modules
-.sass-cache
+.env.*.php
+.env.php
+.DS_Store
+Thumbs.db

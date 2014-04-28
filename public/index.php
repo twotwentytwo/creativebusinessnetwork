@@ -1,21 +1,49 @@
 <?php
+/**
+ * Laravel - A PHP Framework For Web Artisans
+ *
+ * @package  Laravel
+ * @author   Taylor Otwell <taylorotwell@gmail.com>
+ */
 
-define( 'PATH_ROOT', dirname( __DIR__ ) );
-define( 'PATH_CACHE', PATH_ROOT . '/cache' );
-define( 'PATH_LOCALES', PATH_ROOT . '/locales' );
-define( 'PATH_LOG', PATH_ROOT . '/log' );
-define( 'PATH_PUBLIC', PATH_ROOT . '/public' );
-define( 'PATH_SRC', PATH_ROOT . '/src' );
-define( 'PATH_VENDOR', PATH_ROOT . '/vendor' );
-define( 'PATH_VIEWS', PATH_SRC . '/views' );
+/*
+|--------------------------------------------------------------------------
+| Register The Auto Loader
+|--------------------------------------------------------------------------
+|
+| Composer provides a convenient, automatically generated class loader
+| for our application. We just need to utilize it! We'll require it
+| into the script here so that we do not have to worry about the
+| loading of any our classes "manually". Feels great to relax.
+|
+*/
 
-ini_set('display_errors', 1);
+require __DIR__.'/../bootstrap/autoload.php';
 
-require_once PATH_VENDOR . '/autoload.php';
+/*
+|--------------------------------------------------------------------------
+| Turn On The Lights
+|--------------------------------------------------------------------------
+|
+| We need to illuminate PHP development, so let's turn on the lights.
+| This bootstraps the framework and gets it ready for use, then it
+| will load up this application so that we can run it and send
+| the responses back to the browser and delight these users.
+|
+*/
 
-$app = new Silex\Application();
+$app = require_once __DIR__.'/../bootstrap/start.php';
 
-require PATH_SRC . '/config/prod.php';
-require PATH_SRC . '/app.php';
+/*
+|--------------------------------------------------------------------------
+| Run The Application
+|--------------------------------------------------------------------------
+|
+| Once we have the application, we can simply call the run method,
+| which will execute the request and send the response back to
+| the client's browser allowing them to enjoy the creative
+| and wonderful application we have whipped up for them.
+|
+*/
 
-$app['http_cache']->run();
+$app->run();
