@@ -80,7 +80,7 @@ return array(
 	|
 	*/
 
-	'key' => 'mqMdyoDnpwBFa3PwZBdspkh56A7xIPAt',
+	'key' => (isset($_SERVER['ENCRYPTION_KEY'])) ? $_SERVER['ENCRYPTION_KEY'] : null,
 
 	/*
 	|--------------------------------------------------------------------------
