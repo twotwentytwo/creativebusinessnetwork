@@ -72,13 +72,6 @@ class User extends Base implements UserInterface, RemindableInterface {
         return 'remember_token';
     }
 
-    public function email()
-    {
-        if ($this->eemail) {
-            return Crypt::decrypt($this->eemail);
-        }
-    }
-
     /**
      * Get the e-mail address where password reminders are sent.
      *

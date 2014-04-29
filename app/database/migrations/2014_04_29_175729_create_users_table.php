@@ -15,7 +15,7 @@ class CreateUsersTable extends Migration {
 		Schema::dropIfExists('users');
         Schema::create('users', function($t) {
                 $t->increments('id');
-                $t->string('eemail', 300);
+                $t->string('email', 256);
                 $t->string('password', 64);
                 $t->timestamps();
         });

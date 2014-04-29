@@ -23,7 +23,7 @@ class UserTableSeeder extends Seeder {
         DB::table('users')->delete();
 
         User::create(array(
-        	'eemail' => Crypt::encrypt('davidjmarland2+user@gmail.com'),
+        	'email' => 'davidjmarland2+user@gmail.com',
             'password' => Hash::make('qwerty')
             )
         );

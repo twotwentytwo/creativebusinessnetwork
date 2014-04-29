@@ -9,7 +9,7 @@
             <p>USERS IN DB:</p>
             <ul>
                 @foreach($data->users as $user)
-                    <li>{{ $user->url_key() }}: {{ $user->email() }}</li>
+                    <li>{{ $user->url_key() }}: {{ $user->email }}</li>
                 @endforeach
             </ul>
         </div><!--
