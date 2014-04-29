@@ -2,7 +2,7 @@
 
 return array(
     array(
-            'email' => Crypt::encrypt('davidm@rland.me.uk'),
+            'email' => Crypt::encrypt('davidjmarland2+user@gmail.com'),
             'password' => Hash::make('qwerty')
     ),
 );
