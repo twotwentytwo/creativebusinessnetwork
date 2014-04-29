@@ -17,8 +17,6 @@ class HomeController extends BaseController {
 
     public function showHome($name = null)
     {
-        $this->data->highlighted = 'home';
-
         $this->data->users = User::all();
 
         return View::make('home.show')

@@ -14,3 +14,24 @@
 Route::get('/', array('uses' => 'HomeController@showHome','as' => 'home'));
 Route::get('/styleguide', array('uses' => 'HomeController@styleguide','as' => 'styleguide'));
 Route::get('/404', array('uses' => 'HomeController@show404','as' => '404'));
+
+Route::get('/login', array('uses' => 'UsersController@login','as' => 'login'))->before('guest');
+Route::post('/login', array('uses' => 'UsersController@doLogin'))->before('guest');
+
+Route::get('/logout', array('uses' => 'UsersController@logout','as' => 'logout'))->before('auth');
+
+Route::get('/profile', array('uses' => 'UsersController@profile','as' => 'profile'))->before('auth');;
+
+
+Route::filter('guest', function() {
+    if (Auth::check())
+        return Redirect::route('home')
+            ->with('flash_notice', 'You are already logged in!');
+});
+
+Route::filter('auth', function()
+{
+    if (Auth::guest())
+        return Redirect::route('login')
+            ->with('flash_error', 'You must be logged in to view this page!');
+});
