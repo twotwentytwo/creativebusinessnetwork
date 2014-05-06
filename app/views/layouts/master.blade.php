@@ -20,20 +20,13 @@
                         <li><a href="{{ URL::route('profile') }}">Profile</a></li>
                         <li><a href="{{ URL::route('logout') }}">Log out ({{ Auth::user()->email }})</a></li>
                     @else
-                        <li><a href="{{ URL::route('login') }}">Log in</a></li>
+                        <li><a href="{{ URL::route('login') }}">Log in / Register</a></li>
                     @endif
                 </ul>
             </div><!-- end nav -->
         </div>
 
         <div class="content">
-            <!-- check for flash messages -->
-            @if (Session::has('flash_error'))
-                <div id="flash_error">{{ Session::get('flash_error') }}</div>
-            @endif
-            @if (Session::has('flash_notice'))
-                <div id="flash_notice">{{ Session::get('flash_notice') }}</div>
-            @endif
             @yield('content')
         </div>
 

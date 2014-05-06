@@ -7,12 +7,7 @@ class User extends Base implements UserInterface, RemindableInterface {
 
     const KEY_PREFIX = 'u';
 
-    /**
-     * The database table used by the model.
-     *
-     * @var string
-     */
-    protected $table = 'users';
+    public $table = 'users';
 
     /**
      * The attributes excluded from the model's JSON form.
@@ -20,6 +15,22 @@ class User extends Base implements UserInterface, RemindableInterface {
      * @var array
      */
     protected $hidden = array('password');
+
+    public static function emailExists($email)
+    {
+        return (self::where('email','=', $email)->count() > 0);
+    }
+
+    public static function register($userdata)
+    {
+        // create in database
+        $user = new self;
+        $user->email = $userdata['email'];
+        $user->password = Hash::make($userdata['password']);
+        $user->save();
+
+        return $user;
+    }
 
     /**
      * Get the unique identifier for the user.

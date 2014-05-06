@@ -1,5 +1,6 @@
 <?php
-
+/* @todo - remove before launch */
+ini_set('display_errors', true);
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -20,18 +21,26 @@ Route::post('/login', array('uses' => 'UsersController@doLogin'))->before('guest
 
 Route::get('/logout', array('uses' => 'UsersController@logout','as' => 'logout'))->before('auth');
 
-Route::get('/profile', array('uses' => 'UsersController@profile','as' => 'profile'))->before('auth');;
+Route::get('/confirm-email', array(
+    'uses' => 'UsersController@confirm_email',
+    'as' => 'confirm_email'));
+
+Route::controller('password', 'RemindersController');
+
+Route::get('/profile', array('uses' => 'UsersController@profile','as' => 'profile'))->before('auth');
 
 
 Route::filter('guest', function() {
-    if (Auth::check())
+    if (Auth::check()) {
         return Redirect::route('home')
             ->with('flash_notice', 'You are already logged in!');
+    }
 });
 
 Route::filter('auth', function()
 {
-    if (Auth::guest())
+    if (Auth::guest()) {
         return Redirect::route('login')
             ->with('flash_error', 'You must be logged in to view this page!');
+    }
 });

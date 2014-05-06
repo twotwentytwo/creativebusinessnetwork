@@ -3,24 +3,10 @@
 @section('content')
     <div class="grid"><!--
     --><div class="g">
-            <h1>Log in</h1>
-            {{ Form::open(array('route' => 'login')) }}
-                <!-- if there are login errors, show them here -->
-                <p>
-                    {{ Form::label('email', 'Email Address') }}
-                    {{ Form::email('email', Input::old('email'), array('placeholder' => 'john@example.com')) }}
-                    {{ $errors->first('email') }}
-                </p>
-
-                <p>
-                    {{ Form::label('password', 'Password') }}
-                    {{ Form::password('password') }}
-                    {{ $errors->first('password') }}
-                </p>
-
-                <p>{{ Form::submit('Submit!') }}</p>
-            {{ Form::close() }}
-
+            <h1>Login/Register</h1>
+            @include('partials.messages')
+            <p>Enter your address and.... blah blah blah</p>
+            @include('partials.regin')
         </div><!--
     --></div>
 @stop

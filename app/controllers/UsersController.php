@@ -33,16 +33,26 @@ class UsersController extends BaseController {
                 'password'  => Input::get('password')
             );
 
-            // attempt to do the login
-            if (Auth::attempt($userdata, true)) {
-                return Redirect::route('profile')
-                    ->with('flash_notice', 'You are successfully logged in.');
+            if (User::emailExists($userdata['email'])) {
+                // user exists. try to login
+                $this->_loginAttempt($userdata);
             } else {
-                // validation not successful, send back to form
-                return Redirect::route('login')->with('flash_error', 'Invalid details');
-
+                // register the user
+                $user = User::Register($userdata);
+                // login
+                $this->_loginAttempt($userdata);
             }
+        }
+    }
 
+    protected function _loginAttempt($userdata)
+    {
+        if (Auth::attempt($userdata, true)) {
+            return Redirect::route('profile')
+                ->with('flash_notice', 'You are successfully logged in.');
+        } else {
+            // validation not successful, send back to form
+            return Redirect::route('login')->with('flash_error', 'Invalid details');
         }
     }
 
@@ -51,6 +61,11 @@ class UsersController extends BaseController {
         Auth::logout();
         return Redirect::route('profile')
             ->with('flash_notice', 'You are successfully logged out.');
+    }
+
+    public function confirm_email()
+    {
+
     }
 
     public function profile()
