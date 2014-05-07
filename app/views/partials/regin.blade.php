@@ -2,7 +2,7 @@
     <!-- if there are login errors, show them here -->
     <p>
         {{ Form::label('email', 'Email Address') }}
-        {{ Form::email('email', Input::old('email'), array('placeholder' => 'john@example.com')) }}
+        {{ Form::email('email', Input::old('email'), array('placeholder' => 'name@example.com')) }}
         {{ $errors->first('email') }}
     </p>
 
@@ -12,5 +12,5 @@
         {{ $errors->first('password') }}
     </p>
 
-    <p>{{ Form::submit('Submit!') }}</p>
+    <p>{{ Form::submit('Submit!') }} <a href="{{ action('RemindersController@getRemind')}}">Forgotten?</a></p>
 {{ Form::close() }}

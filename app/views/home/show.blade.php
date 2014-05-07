@@ -1,6 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
+@include('partials.messages')
     <div class="grid"><!--
     --><div class="g g-l-1-2 g-xl-1-3">
             <p>HOME PAGE</p>

@@ -3,7 +3,6 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" href="/static/{{ Config::get('app.static_version') }}/css/global.css" />
-        <link href='http://fonts.googleapis.com/css?family=Advent+Pro:400,300' rel='stylesheet' type='text/css'>
         <title>CBN</title>
         <meta name="description" content="CBN" />
         <meta name="viewport" content="width=device-width" />

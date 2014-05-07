@@ -623,17 +623,17 @@ h1, .a {
   font-size: 2.4rem;
   line-height: 1.2;
   margin: 0 0 6px 0;
-  font-weight: normal;
+  font-weight: lighter;
   text-transform: none;
-  font-family: 'Advent Pro', sans-serif; }
+  font-family: sans-serif; }
 
 h2, .b {
   font-size: 24px;
   font-size: 1.5rem;
   line-height: 1.2;
   margin: 0 0 6px 0;
-  font-weight: normal;
-  font-family: 'Advent Pro', sans-serif;
+  font-weight: lighter;
+  font-family: sans-serif;
   text-transform: uppercase; }
 
 h3, .c {
@@ -642,7 +642,7 @@ h3, .c {
   line-height: 1.2;
   margin: 0 0 6px 0;
   font-weight: normal;
-  font-family: 'Advent Pro', sans-serif;
+  font-family: sans-serif;
   text-transform: none; }
 
 h4, .d {
@@ -905,6 +905,29 @@ ol ol {
   content: "";
   margin-right: 0;
   margin-left: 0; }
+
+.message {
+  margin: 8px 0;
+  padding: 8px;
+  color: #333;
+  background: #ccc;
+  border: solid 1px #999;
+  border-radius: 2px; }
+
+.message--error {
+  color: #933;
+  background: #fcc;
+  border: solid 1px #c99; }
+
+.message--notice {
+  color: #339;
+  background: #ccf;
+  border: solid 1px #99c; }
+
+.message--ok {
+  color: #303;
+  background: #cfc;
+  border: solid 1px #9c9; }
 
 /* ==========================================================================
    Print styles.
