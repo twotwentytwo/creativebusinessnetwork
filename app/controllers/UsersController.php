@@ -4,7 +4,6 @@ class UsersController extends BaseController {
 
     public function login()
     {
-
         return View::make('users.login')
             ->with(array('data' => $this->data));
     }
@@ -34,27 +33,28 @@ class UsersController extends BaseController {
                 'password'  => Input::get('password')
             );
 
-            if (User::emailExists($userdata['email'])) {
-                // user exists. try to login
-                $this->_loginAttempt($userdata);
-            } else {
+            if (!User::emailExists($userdata['email'])) {
                 // register the user
                 $user = User::Register($userdata);
-                // login
-                $this->_loginAttempt($userdata);
+            }
+
+            // login
+            if (Auth::attempt($userdata, true)) {
+                return Redirect::route('profile')
+                    ->with('flash_notice', 'You are successfully logged in.');
+            } else {
+                // validation not successful, send back to form
+                return Redirect::route('login')
+                    ->with('flash_error', 'One or more of your details was incorrect. Please try again.')
+                    ->withErrors($validator)
+                    ->withInput(Input::except('password'));
             }
         }
     }
 
-    protected function _loginAttempt($userdata)
+    protected function _loginAttempt($userdata, $validator)
     {
-        if (Auth::attempt($userdata, true)) {
-            return Redirect::route('profile')
-                ->with('flash_notice', 'You are successfully logged in.');
-        } else {
-            // validation not successful, send back to form
-            return Redirect::route('login')->with('flash_error', 'Invalid details');
-        }
+
     }
 
     public function logout()
