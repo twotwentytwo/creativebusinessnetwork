@@ -21,9 +21,12 @@ Route::post('/login', array('uses' => 'UsersController@doLogin'))->before('guest
 
 Route::get('/logout', array('uses' => 'UsersController@logout','as' => 'logout'))->before('auth');
 
-Route::get('/confirm-email', array(
-    'uses' => 'UsersController@confirm_email',
-    'as' => 'confirm_email'));
+Route::get('/verify', array(
+    'uses' => 'UsersController@verify',
+    'as' => 'verify'))
+    ->before('auth');
+
+Route::post('/verify', array('uses' => 'UsersController@doResend'))->before('auth');
 
 Route::controller('password', 'RemindersController');
 
@@ -42,5 +45,8 @@ Route::filter('auth', function()
     if (Auth::guest()) {
         return Redirect::route('login')
             ->with('flash_error', 'You must be logged in to view this page!');
+    }
+    if (!Auth::user()->isVerified()) {
+        Session::put('flash_notice', 'You must verify your e-mail');
     }
 });

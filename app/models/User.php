@@ -29,7 +29,18 @@ class User extends Base implements UserInterface, RemindableInterface {
         $user->password = Hash::make($userdata['password']);
         $user->save();
 
+        // send an e-mail
+        $this->sendVerifyEmail();
+
         return $user;
+    }
+
+    public function sendVerifyEmail()
+    {
+        $user = $this;
+        Mail::send('emails.verify', array('token' => '123'), function($message) use ($user) {
+            $message->to($user->email, $user->email)->subject('Verify your e-mail');
+        });
     }
 
     /**
@@ -91,5 +102,37 @@ class User extends Base implements UserInterface, RemindableInterface {
     public function getReminderEmail()
     {
         return $this->email;
+    }
+
+    /**
+     * Get the e-mail address where password reminders are sent.
+     *
+     * @return string
+     */
+    public function verify()
+    {
+        $this->verified = 1;
+        $this->save();
+    }
+
+    /**
+     * Get the e-mail address where password reminders are sent.
+     *
+     * @return string
+     */
+    public function unverify()
+    {
+        $this->verified = 0;
+        $this->save();
+    }
+
+    /**
+     * Get the e-mail address where password reminders are sent.
+     *
+     * @return string
+     */
+    public function isVerified()
+    {
+        return $this->verified == 1;
     }
 }

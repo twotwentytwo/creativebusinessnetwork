@@ -24,8 +24,10 @@
             </ul>
         </div><!--
         --><div class="g g-l-1-2 g-xl-2-3">
-            <h2>Login/Register</h2>
-            @include('partials.regin')
+            @if(!Auth::check())
+                <h2>Login/Register</h2>
+                @include('partials.regin')
+            @endif
         </div><!--
     --></div>
 @stop

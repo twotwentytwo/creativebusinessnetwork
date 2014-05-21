@@ -41,7 +41,7 @@ class UsersController extends BaseController {
             // login
             if (Auth::attempt($userdata, true)) {
                 return Redirect::route('profile')
-                    ->with('flash_notice', 'You are successfully logged in.');
+                    ->with('flash_ok', 'You are successfully logged in.');
             } else {
                 // validation not successful, send back to form
                 return Redirect::route('login')
@@ -64,9 +64,17 @@ class UsersController extends BaseController {
             ->with('flash_notice', 'You are successfully logged out.');
     }
 
-    public function confirm_email()
+    public function doResend()
     {
+        Auth::user()->sendVerifyEmail();
+        return Redirect::route('verify')
+            ->with('flash_ok', 'E-mail resent');
+    }
 
+    public function verify($token = null)
+    {
+        return View::make('users.verify')
+            ->with(array('data' => $this->data));
     }
 
     public function profile()
