@@ -21,7 +21,7 @@ class ShortKey {
                 $id = $newid;
             }
         }
-        return strtolower($model::KEY_PREFIX . '0' . str_pad($key, 2, '0', STR_PAD_LEFT));
+        return strtolower($model::KEY_PREFIX . ':0' . str_pad($key, 2, '0', STR_PAD_LEFT));
     }
 
     public static function toId($key, $prefix = false) {
@@ -29,7 +29,7 @@ class ShortKey {
             $prefix = substr($key,0,1);
         }
         $key = strtolower($key);
-        $key = str_replace('0','',$key);
+        $key = str_replace(array('0',':'),'',$key);
         $base = strlen(self::$_allowed);
         $key = array_reverse(str_split(substr($key,strlen($prefix))));
         $id = 0;

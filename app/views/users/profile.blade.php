@@ -4,9 +4,7 @@
     <div class="grid"><!--
     --><div class="g">
             @include('partials.messages')
-            <h2>Welcome "{{ Auth::user()->email }}" to the protected page!</h2>
-            <p>Your user ID is: {{ Auth::user()->id }}</p>
-            <p>Your user Key is: {{ Auth::user()->url_key() }}</p>
+            <h1>Profile page for  "{{ $data->user->url_key() }}"</h1>
         </div><!--
     --></div>
 @stop

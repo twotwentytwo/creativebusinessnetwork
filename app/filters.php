@@ -36,8 +36,9 @@ App::after(function($request, $response)
 Route::filter('auth', function()
 {
     if (Auth::guest()) {
-        return Redirect::route('login')
-            ->with('flash_error', 'You must be logged in to view this page!');
+        return View::make('users.login');
+        /*return Redirect::route('login')
+            ->with('flash_error', 'You must be logged in to view this page!');*/
     }
     if (!Auth::user()->isVerified()) {
         Session::flash('flash_notice', 'Your account is limited until you <a href="' . URL::route('verify') . '">verify your e-mail address</a>');

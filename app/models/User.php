@@ -30,9 +30,48 @@ class User extends Base implements UserInterface, RemindableInterface {
         $user->save();
 
         // send an e-mail
-        $this->sendVerifyEmail();
+        $user->sendVerifyEmail();
 
         return $user;
+    }
+
+    public static function findById($id)
+    {
+        $user = self::find($id);
+        return $user;
+    }
+
+    public static function findByKey($key)
+    {
+        $id = ShortKey::toId($key);
+        return self::findById($id);
+    }
+
+    public static function findByUsername()
+    {
+        // usernames not supported yet
+        return null;
+    }
+
+    public function updatePassword($new_password)
+    {
+        $this->password = Hash::make($new_password);
+        $this->save();
+        return true;
+    }
+
+    public function updateEmail($new_email)
+    {
+        if ($new_email == $this->email) {
+            return false; // no change made
+        }
+        $this->email = $new_email;
+        $this->save();
+
+        $this->unverify(); // new e-mail will lower priviledges until confirmed
+        // send an e-mail
+        $this->sendVerifyEmail();
+        return true;
     }
 
     public function getVerifyToken()
@@ -144,5 +183,10 @@ class User extends Base implements UserInterface, RemindableInterface {
     public function isVerified()
     {
         return $this->verified == 1;
+    }
+
+    public function sameAs($user)
+    {
+        return ($this->id == $user->id);
     }
 }
