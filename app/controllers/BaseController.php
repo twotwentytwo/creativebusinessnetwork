@@ -12,7 +12,6 @@ class BaseController extends Controller {
     public function __construct()
     {
         $this->data = new StdClass;
-        $this->data->highlighted = null;
     }
 
     /**

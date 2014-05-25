@@ -13,6 +13,25 @@ class Base extends Eloquent {
     {
         return ShortKey::toKey($this);
     }
+
+    public static function findById($id)
+    {
+        $class = get_called_class();
+        $obj = static::find($id);
+        return $obj;
+    }
+
+    public static function findByKey($key)
+    {
+        $id = ShortKey::toId($key);
+        return static::findById($id);
+    }
+
+
+    public function sameAs($obj)
+    {
+        return ($this->id == $obj->id);
+    }
 /*
     protected static function table()
     {

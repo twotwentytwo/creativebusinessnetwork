@@ -38,6 +38,7 @@ Route::get(
                                 ))
                                 ->before('auth');
 
+// users
 Route::get(
     '/users/{key}',    array('uses' => 'UsersController@profile','as' => 'user_profile'));
 
@@ -56,16 +57,31 @@ Route::get(
 Route::controller('password', 'RemindersController');
 
 
+// companies (has to go last as it grabs remaining URLs)
+Route::get(
+    '/companies',    array('uses' => 'CompaniesController@home','as' => 'companies_list'));
+
+Route::get(
+    '/companies/new',    array('uses' => 'CompaniesController@newcompany','as' => 'companies_new'))->before('auth');
+
+Route::get(
+    '/{key}',    array('uses' => 'CompaniesController@show','as' => 'companies_show'));
+
 
 // post roots
 Route::post(
     '/login',               array('uses' => 'UsersController@doLogin'))->before('guest');
 
 Route::post(
-    '/users/{key}/delete',   array('uses' => 'UsersController@doDelete'))->before('auth');
+    '/users/{key}/delete',  array('uses' => 'UsersController@doDelete'))->before('auth');
 
 Route::post(
-    '/users/{key}/edit',   array('uses' => 'UsersController@doEdit'))->before('auth');
+    '/users/{key}/edit',    array('uses' => 'UsersController@doEdit'))->before('auth');
 
 Route::post(
     '/verify',              array('uses' => 'UsersController@doResend'))->before('auth');
+
+Route::post(
+    '/companies/new',       array('uses' => 'CompaniesController@doNew'))->before('auth');
+
+

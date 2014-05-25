@@ -10,7 +10,8 @@ class DatabaseSeeder extends Seeder {
 	public function run()
 	{
 		Eloquent::unguard();
-		$this->call('UserTableSeeder');
+        $this->call('UserTableSeeder');
+        $this->call('CompanyTableSeeder');
 	}
 
 }
@@ -28,6 +29,20 @@ class UserTableSeeder extends Seeder {
             )
         );
         $this->command->info('User table seeded!');
+    }
+
+}
+
+class CompanyTableSeeder extends Seeder {
+
+    public function run()
+    {
+
+        Company::create(array(
+            'name' => 'My fake company',
+            )
+        );
+        $this->command->info('Company table seeded!');
     }
 
 }

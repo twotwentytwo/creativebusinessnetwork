@@ -4,7 +4,8 @@
 @include('partials.messages')
     <div class="grid"><!--
     --><div class="g g-l-1-2 g-xl-2-3">
-            <p>HOME PAGE</p>
+            <h1>HOME PAGE</h1>
+            <p><a href="{{ URL::route('companies_list') }}">List of companies</a></p>
             <p>Current time: {{ date('F j, Y, g:i A') }}  </p>
             <p>Now (according to Carbon): {{ Carbon::now()->toDateTimeString() }}</p>
             <?
