@@ -6,13 +6,28 @@
 html {
     height: 100%;
     font-size: ($base-font-size/16) * 100%; // based on browser default of 16px
+
 }
 body {
-    color: $text-color;
+    color: $html-textcolor;
     padding: 0;
     margin: 0;
     min-height: 100%;
-	background-color: $body-color;
+	background-color: $html-color;
+}
+.content {
+    color: $text-color;
+    background-color: $body-color;
+    padding-left: $spacing-unit;
+    padding-right: $spacing-unit;
+}
+.situated {
+    padding-left: $spacing-unit;
+    padding-right: $spacing-unit;
+}
+.situated--half {
+    padding-left: $spacing-unit-half;
+    padding-right: $spacing-unit-half;
 }
 
 

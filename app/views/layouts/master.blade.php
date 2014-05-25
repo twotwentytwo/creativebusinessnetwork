@@ -11,25 +11,34 @@
         <!--[if lt IE 9]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
-        <div class="header">
-            <div class="header_logo"><a href="{{ URL::route('home') }}">THINGSPACE</a></div>
-            <div id="nav">
-                <ul>
-                    @if(Auth::check())
-                        <li><a href="{{ URL::route('user_dashboard', array('key' => Auth::user()->url_key())) }}">Dashboard</a></li>
-                        <li><a href="{{ URL::route('logout') }}">Log out ({{ Auth::user()->email }})</a></li>
-                    @else
-                        <li><a href="{{ URL::route('login') }}">Log in / Register</a></li>
-                    @endif
-                </ul>
-            </div><!-- end nav -->
+        <div class="header situated--half">
+            <div class="grid">
+                <div class="g g-1-2">
+                    <div class="header__logo"><a href="{{ URL::route('home') }}"><strong>THINGSPACE</strong></a></div>
+                </div>
+                <div class="g g-1-2">
+                    <div class="header__nav" id="nav">
+                        <nav>
+                        <ul class="list--unstyled text--right">
+                                <li class="header__navitem header__search"><input type="search" placeholder="Search for a business or skillset" /><button class="btn" ype="submit"><i class="fa fa-search"></i></button></li>
+                            @if(Auth::check())
+                                <li class="header__navitem"><a href="{{ URL::route('user_dashboard', array('key' => Auth::user()->url_key())) }}">Dashboard</a></li>
+                                <li class="header__navitem"><a href="{{ URL::route('logout') }}"><i class="fa fa-sign-out"></i> Log out</a></li>
+                            @else
+                                <li class="header__navitem"><a href="{{ URL::route('login') }}"><i class="fa fa-sign-in"></i> Log in / Register</a></li>
+                            @endif
+                        </ul><!--
+                        --></nav><!--
+                    --></div><!-- end nav -->
+                </div>
+            </div>
         </div>
 
         <div class="content">
             @yield('content')
         </div>
 
-        <div class="footer">
+        <div class="footer situated">
             FOOTER
         </div>
     </body>

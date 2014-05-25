@@ -5,6 +5,10 @@
     background: #ccc;
     border: solid 1px #999;
     border-radius: 2px;
+    i {
+        margin-left: 8px;
+        margin-right: 8px;
+    }
 }
 
 .message--error {
@@ -20,7 +24,7 @@
 }
 
 .message--ok {
-    color: #303;
+    color: #393;
     background: #cfc;
     border: solid 1px #9c9;
 }

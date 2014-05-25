@@ -2,8 +2,7 @@
 /* Grid */
 .grid {
     display: block;
-    margin-right: -$spacing-unit-half;
-    margin-left: -$spacing-unit-half;
+    margin-left: -$spacing-unit;
 
     letter-spacing: -0.31em; /* webkit */
     *letter-spacing: normal; /* reset IE < 8 */
@@ -20,8 +19,7 @@
   clear: both;
 }
 .g {
-    padding-right: $spacing-unit-half;
-    padding-left: $spacing-unit-half;
+    padding-left: $spacing-unit;
     display: inline-block;
     vertical-align: top;
     width: 100%;

@@ -3,7 +3,7 @@
 @section('content')
 @include('partials.messages')
     <div class="grid"><!--
-    --><div class="g g-l-1-2 g-xl-1-3">
+    --><div class="g g-l-1-2 g-xl-2-3">
             <p>HOME PAGE</p>
             <p>Current time: {{ date('F j, Y, g:i A') }}  </p>
             <p>Now (according to Carbon): {{ Carbon::now()->toDateTimeString() }}</p>
@@ -23,7 +23,7 @@
                 @endforeach
             </ul>
         </div><!--
-        --><div class="g g-l-1-2 g-xl-2-3">
+        --><div class="g g-l-1-2 g-xl-1-3">
             @if(!Auth::check())
                 <h2>Login/Register</h2>
                 @include('partials.regin')
