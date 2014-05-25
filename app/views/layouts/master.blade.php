@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" href="/static/{{ Config::get('app.static_version') }}/css/global.css" />
+        <link rel="stylesheet" href="/static/{{ Config::get('app.version') }}/css/global.css" />
         <title>CBN</title>
         <meta name="description" content="CBN" />
         <meta name="viewport" content="width=device-width" />

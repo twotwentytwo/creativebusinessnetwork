@@ -35,10 +35,20 @@ class User extends Base implements UserInterface, RemindableInterface {
         return $user;
     }
 
+    public function getVerifyToken()
+    {
+        // basic hash to generate token, salted with various bits of data
+        return sha1(
+            $this->created_at->timestamp .
+            $this->email .
+            Config::get('app.key')
+        );
+    }
+
     public function sendVerifyEmail()
     {
         $user = $this;
-        Mail::send('emails.verify', array('token' => '123'), function($message) use ($user) {
+        Mail::send('emails.verify', array('token' => $user->getVerifyToken()), function($message) use ($user) {
             $message->to($user->email, $user->email)->subject('Verify your e-mail');
         });
     }

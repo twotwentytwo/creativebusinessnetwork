@@ -73,6 +73,16 @@ class UsersController extends BaseController {
 
     public function verify($token = null)
     {
+        if (isset($token)) {
+            if ($token == Auth::user()->getVerifyToken()) {
+                Auth::user()->verify();
+                Session::forget('flash_notice'); // clear previous verify message
+                return Redirect::route('profile')
+                    ->with('flash_ok', 'E-mail verified successfully. Your account is now fully active');
+            } else {
+                Session::flash('flash_error', 'Verification token either invalid or expired. Resend it below');
+            }
+        }
         return View::make('users.verify')
             ->with(array('data' => $this->data));
     }

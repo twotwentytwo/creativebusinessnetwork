@@ -67,6 +67,17 @@ App::down(function()
 	return Response::make("Be right back!", 503);
 });
 
+
+/*
+|--------------------------------------------------------------------------
+| Require The Listeners File
+|--------------------------------------------------------------------------
+|
+| Next we will load the listeners file for the application.
+|
+*/
+require app_path().'/listeners.php';
+
 /*
 |--------------------------------------------------------------------------
 | Require The Filters File
