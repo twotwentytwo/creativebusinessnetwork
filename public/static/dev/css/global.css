@@ -2013,14 +2013,12 @@ textarea {
   box-sizing: border-box; }
 
 html {
-  height: 100%;
   font-size: 100%; }
 
 body {
   color: white;
   padding: 0;
   margin: 0;
-  min-height: 100%;
   background-color: #222622; }
 
 .content {

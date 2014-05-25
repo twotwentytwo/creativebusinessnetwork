@@ -30,6 +30,13 @@ class HomeController extends BaseController {
             ->with(array('data' => $this->data));
     }
 
+    public function welcome()
+    {
+
+        return View::make('home.welcome')
+            ->with(array('data' => $this->data));
+    }
+
     public function show404()
     {
         return View::make('home.404')

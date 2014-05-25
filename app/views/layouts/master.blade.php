@@ -36,6 +36,21 @@
 
         <div class="content">
             @yield('content')
+            -<br />
+            -<br />
+            -<br />
+            -<br />
+
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
         </div>
 
         <div class="footer situated">

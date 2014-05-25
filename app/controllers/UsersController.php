@@ -33,14 +33,16 @@ class UsersController extends BaseController {
                 'password'  => Input::get('password')
             );
 
+            $new = false;
             if (!User::emailExists($userdata['email'])) {
                 // register the user
                 $user = User::Register($userdata);
+                $new = true;
             }
 
             // login
             if (Auth::attempt($userdata, true)) {
-                return Redirect::route('user_dashboard', array('key' => Auth::user()->url_key()))
+                return Redirect::route($new ? 'welcome' : 'user_dashboard', array('key' => Auth::user()->url_key()))
                     ->with('flash_ok', 'You are successfully logged in.');
             } else {
                 // validation not successful, send back to form
@@ -192,7 +194,7 @@ class UsersController extends BaseController {
         }
         $this->data->user->delete();
         return Redirect::route('home')
-            ->with('flash_notice', 'Account has been deleted');
+            ->with('flash_ok', 'Account has been deleted');
     }
 
     protected function getUser($user_key, $restricted = true)
