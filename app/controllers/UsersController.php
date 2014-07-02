@@ -107,6 +107,8 @@ class UsersController extends BaseController {
             ->with(array('data' => $this->data));
         }
 
+        $this->data->companies = Company::findByCreator($this->data->user);
+
         return View::make('users.dashboard')
             ->with(array('data' => $this->data));
     }

@@ -14,6 +14,7 @@ class Company extends Base {
         if (isset($companydata['url_word']) && !empty($companydata['url_word'])) {
             $company->url_word = $companydata['url_word'];
         }
+        $company->created_by = $companydata['creator']->id;
         $company->save();
         return $company;
     }
@@ -22,6 +23,12 @@ class Company extends Base {
     {
         $company = self::where('url_word','=', $word)->first();
         return $company;
+    }
+
+    public static function findByCreator($user)
+    {
+        $companies = self::where('created_by','=', $user->id)->get();
+        return $companies;
     }
 
     public function url_entity()

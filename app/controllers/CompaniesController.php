@@ -38,7 +38,8 @@ class CompaniesController extends BaseController {
             // create our user data for the authentication
             $companydata = array(
                 'name'     => Input::get('name'),
-                'url_word'  => Input::get('url_word')
+                'url_word'  => Input::get('url_word'),
+                'creator' => Auth::user()
             );
 
             $company = Company::Register($companydata);
