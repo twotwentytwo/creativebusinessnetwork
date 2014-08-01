@@ -62,6 +62,12 @@ class CompaniesController extends BaseController {
             ));
         }
 
+
+        $this->data->divisions = Company::findByParentCompany($this->data->company);
+        $this->data->divisions_count = Company::countByParentCompany($this->data->company);
+
+        $this->data->parent_company = Company::findByChildCompany($this->data->company);
+
         return View::make('companies.show')
             ->with(array('data' => $this->data));
 

@@ -31,6 +31,27 @@ class Company extends Base {
         return $companies;
     }
 
+    public static function findByParentCompany($company)
+    {
+        $companies = self::where('parent_company','=', $company->id)->get();
+        return $companies;
+    }
+
+    public static function countByParentCompany($company)
+    {
+        return self::where('parent_company','=', $company->id)->count();
+    }
+
+
+
+    public static function findByChildCompany($company)
+    {
+        if ($company->parent_company) {
+            return self::findById($company->parent_company);
+        }
+        return null;
+    }
+
     public function url_entity()
     {
         if (isset($this->url_word) && !empty($this->url_word)) {
