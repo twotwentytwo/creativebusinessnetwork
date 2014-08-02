@@ -17,12 +17,6 @@
                 }
             ?>
             <p>Time in cache: {{ $time }}</p>
-            <p>USERS IN DB:</p>
-            <ul>
-                @foreach($data->users as $user)
-                    <li>{{ $user->url_key() }}: {{ $user->email }}</li>
-                @endforeach
-            </ul>
         </div><!--
         --><div class="g g-l-1-2 g-xl-1-3">
             @if(!Auth::check())
