@@ -11,3 +11,4 @@ webroot/.env.*.php
 webroot/.env.php
 .DS_Store
 webroot/.elasticbeanstalk
+.elasticbeanstalk/
