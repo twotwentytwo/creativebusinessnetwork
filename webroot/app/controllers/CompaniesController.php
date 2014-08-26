@@ -199,12 +199,10 @@ class CompaniesController extends BaseController {
             }
         }
 
-        var_dump(Input::all());
-        die;
 
 
         // redirect to company page
-        return Redirect::url($return_url)
+        return Redirect::to($return_url)
             ->with('success', $message);
     }
 
