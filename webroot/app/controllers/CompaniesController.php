@@ -75,6 +75,11 @@ class CompaniesController extends BaseController {
 
         $this->data->parent_company = Company::findByChildCompany($this->data->company);
 
+        $this->data->visitor_in_company = UserInCompany::isUserInCompany(
+            Auth::user(),
+            $this->data->company
+        );
+
         // users in company
         $this->data->users_in_company = UserInCompany::findActiveUsersByCompany($this->data->company);
         $this->data->show_users = false;
@@ -104,6 +109,103 @@ class CompaniesController extends BaseController {
             return false;
         }*/
         return true;
+    }
+
+    public function membersAction($key = null)
+    {
+        if (!$this->getCompany($key)) {
+            return View::make('home.404')
+                ->with(array('data' => $this->data));
+        }
+
+        $this->data->visitor_is_admin = (
+            Auth::user() &&
+            (Auth::user()->isAdmin() ||
+                UserInCompany::isUserCompanyAdmin(
+                    Auth::user(),
+                    $this->data->company
+                )
+            )
+        );
+
+        $this->data->update_url = URL::route('company_membership', array(
+            'key' => $this->data->company->url_entity()
+        ));
+        $this->data->return_url = URL::route('companies_members', array(
+            'key' => $this->data->company->url_entity()
+        ));
+
+        // if show_users == false
+        // only admins can access this page
+
+        if ($this->data->visitor_is_admin) {
+            $this->data->users_in_company = UserInCompany::findAllUsersByCompany($this->data->company);
+        } else {
+            $this->data->users_in_company = UserInCompany::findActiveUsersByCompany($this->data->company);
+        }
+
+
+        $this->data->parent_company = Company::findByChildCompany($this->data->company);
+
+
+        return View::make('companies.members')
+            ->with(array('data' => $this->data));
+    }
+
+    public function doMembership($key = null)
+    {
+        if (!$this->getCompany($key)) {
+            return View::make('home.404')
+                ->with(array('data' => $this->data));
+        }
+
+        $message = '';
+        $status = Input::get('status');
+        $return_url = Input::get('return_url');
+        if (!$return_url) {
+            $return_url = URL::route('companies_show', array(
+                'key' => $this->data->company->url_entity()
+            ));
+        }
+
+        if ($status == 'join') {
+            // validate you are not already a member
+            UserInCompany::createNewRelationship(
+                Auth::user(),
+                $this->data->company
+            );
+            $message = 'You have joined this company (awaiting approval)';
+        } else {
+            // validate the current user is an admin of the company
+            $user_id = Input::get('user_id');
+            $user = User::findById($user_id);
+            // validate the user exists
+            $user_in_company = UserInCompany::findByUserAndCompany(
+                $user,
+                $this->data->company
+            );
+            // validate the relationship exists
+
+            if ($status == 'approve') {
+                $user_in_company->approve();
+            } elseif ($status == 'admin') {
+                // validate the user is not the current user
+
+            } elseif ($status == 'unadmin') {
+                // validate the user is not the current user
+
+            } elseif ($status == 'delete') {
+
+            }
+        }
+
+        var_dump(Input::all());
+        die;
+
+
+        // redirect to company page
+        return Redirect::url($return_url)
+            ->with('success', $message);
     }
 
 }

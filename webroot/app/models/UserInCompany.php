@@ -87,8 +87,55 @@ class UserInCompany extends Base {
         return $this->company;
     }
 
+    public function isAdmin()
+    {
+        return ($this->status == self::STATUS_ADMIN);
+    }
+
+    public function isAwaitingApproval()
+    {
+        return ($this->status == self::STATUS_AWAITING_APPROVAL);
+    }
+
+    public function approve()
+    {
+        $this->status = self::STATUS_ACTIVE;
+        $this->save();
+    }
+
     public function addCompany(Company $company) {
         $this->company = $company;
+    }
+
+    public static function isUserInCompany($user, $company)
+    {
+        $count = DB::table(self::TABLE)
+            ->where(self::TABLE . '.company_id', '=', $company->id)
+            ->where(self::TABLE . '.user_id', '=', $user->id)
+            ->count();
+        return !!$count;
+    }
+
+    public static function findByUserAndCompany(
+        User $user,
+        Company $company
+    )
+    {
+        $result = DB::table(self::TABLE)
+            ->where(self::TABLE . '.company_id', '=', $company->id)
+            ->where(self::TABLE . '.user_id', '=', $user->id)
+            ->first();
+        return self::setup($result);
+    }
+
+    public static function isUserCompanyAdmin($user, $company)
+    {
+        $count = DB::table(self::TABLE)
+            ->where(self::TABLE . '.company_id', '=', $company->id)
+            ->where(self::TABLE . '.user_id', '=', $user->id)
+            ->where(self::TABLE . '.status', '=', self::STATUS_ADMIN)
+            ->count();
+        return !!$count;
     }
 
     public static function createNewRelationship(
@@ -106,6 +153,22 @@ class UserInCompany extends Base {
         return $relationship;
     }
 
+    public static function findAllUsersByCompany(
+        Company $company
+    )
+    {
+        $results = DB::table(self::TABLE)
+            ->leftJoin(User::TABLE, User::TABLE . '.id', '=', self::TABLE . '.user_id')
+            ->where(self::TABLE . '.company_id', '=', $company->id)
+            ->selectRaw(User::getJoinQuery() . ', ' . self::TABLE . '.*')
+            ->get();
+
+        $relationships = array();
+        foreach ($results as $result) {
+            $relationships[] = self::setup($result);
+        }
+        return $relationships;
+    }
 
     public static function findActiveUsersByCompany(
         Company $company

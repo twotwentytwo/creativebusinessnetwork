@@ -70,6 +70,14 @@ Route::get(
 Route::get(
     '/{key}',    array('uses' => 'CompaniesController@show','as' => 'companies_show'));
 
+Route::get(
+    '/{key}/members',
+    array(
+        'uses' => 'CompaniesController@membersAction',
+        'as' => 'companies_members'
+    )
+);
+
 
 // post roots
 Route::post(
@@ -87,4 +95,10 @@ Route::post(
 Route::post(
     '/companies/new',       array('uses' => 'CompaniesController@doNew'))->before('auth');
 
-
+Route::post(
+    '/{key}/membership',
+    array(
+        'uses' => 'CompaniesController@doMembership',
+        'as' => 'company_membership'
+    )
+);

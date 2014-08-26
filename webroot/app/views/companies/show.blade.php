@@ -37,4 +37,19 @@
 </ul>
     </div></div>
 @endif
+
+@if (!$data->visitor_in_company)
+    <p>
+        <form method="post" action="{{ URL::route('company_membership', array(
+                'key' => $data->company->url_entity()
+            )) }}">
+            <input type="hidden" name="return_url" value="{{ URL::route('companies_show', array(
+                'key' => $data->company->url_entity()
+            )) }}" />
+            <input type="hidden" name="status" value="join" />
+            <button type="submit">Join company</button>
+        </form>
+    </p>
+@endif
+
 @stop

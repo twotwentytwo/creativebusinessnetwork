@@ -239,6 +239,6 @@ class User extends Base implements UserInterface, RemindableInterface {
 
     public function sameAs($user)
     {
-        return ($this->id == $user->id);
+        return ($user && $this->id == $user->id);
     }
 }
