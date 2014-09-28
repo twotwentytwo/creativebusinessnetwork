@@ -1,8 +1,8 @@
 Vagrant.configure("2") do |config|
 
-    config.proxy.http     = ""
-    config.proxy.https    = ""
-    config.proxy.no_proxy = "localhost,127.0.0.1"
+    #config.proxy.http     = ""
+    #config.proxy.https    = ""
+    #config.proxy.no_proxy = "localhost,127.0.0.1"
 
   # Enable the Puppet provisioner, with will look in manifests
   config.vm.provision :puppet do |puppet|
