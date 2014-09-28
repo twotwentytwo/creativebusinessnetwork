@@ -22,7 +22,9 @@ Checkout the CBN application into the 'webroot' directory
 
 $ curl -sS https://getcomposer.org/installer | php
 $ sudo mv composer.phar /usr/local/bin/composer
-$ composer install
+$ php /usr/local/bin/composer install
+OR
+$ php composer install
 
 checkout project into this folder
 
@@ -41,11 +43,12 @@ bundle install
 
 
 sudo apt-get install npm
+npm config set registry http://registry.npmjs.org/
+
 sudo npm cache clean -f
 sudo npm install -g n
 sudo n stable
 
-npm config set registry http://registry.npmjs.org/
 
 sudo npm install
 sudo npm install -g grunt-cli
@@ -54,6 +57,24 @@ grunt watch
 
 =====
 
+Install GIT
+Install AWS
+
+USE download link from http://aws.amazon.com/code/6752709412171743 as LINKSPACE
+
+wget --quiet LINKSPACE
+unzip -qq AWS-ElasticBeanstalk-CLI-*.zip
+sudo mkdir /usr/local/aws
+sudo rsync -a --no-o --no-g AWS-ElasticBeanstalk-CLI-*/ /usr/local/aws/elasticbeanstalk/
+sudo export PATH=$PATH:/usr/local/aws/elastcibeanstalk/eb/linux/python2.7/
+
+Push to AWS
+
+
+
+
+
+===
 
 http://localhost:8888   - homepage
 
