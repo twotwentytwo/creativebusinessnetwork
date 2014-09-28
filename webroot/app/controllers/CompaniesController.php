@@ -75,10 +75,13 @@ class CompaniesController extends BaseController {
 
         $this->data->parent_company = Company::findByChildCompany($this->data->company);
 
-        $this->data->visitor_in_company = UserInCompany::isUserInCompany(
-            Auth::user(),
-            $this->data->company
-        );
+        $this->data->visitor_in_company = null;
+        if (Auth::user()) {
+            $this->data->visitor_in_company = UserInCompany::isUserInCompany(
+                Auth::user(),
+                $this->data->company
+            );
+        }
 
         // users in company
         $this->data->users_in_company = UserInCompany::findActiveUsersByCompany($this->data->company);

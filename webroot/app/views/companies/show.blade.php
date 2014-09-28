@@ -38,7 +38,7 @@
     </div></div>
 @endif
 
-@if (!$data->visitor_in_company)
+@if (Auth::user() && !$data->visitor_in_company)
     <p>
         <form method="post" action="{{ URL::route('company_membership', array(
                 'key' => $data->company->url_entity()
