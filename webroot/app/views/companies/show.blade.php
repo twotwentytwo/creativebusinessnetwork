@@ -34,7 +34,6 @@
                         {{ $data->company->name }}
                 </h1>
                 <p class="description">We are a creative studio producing visual effects and animation for TV, film and web. We love to bring stories &amp; ideas to life.</p>
-                <h3>Actions</h3>
                 <ul>
                     <li><a href="#">Recommend</a></li>
                     <li><a href="#">Join</a></li>
