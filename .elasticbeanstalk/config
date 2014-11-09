@@ -1,0 +1,6 @@
+[global]
+AwsCredentialFile=/home/vagrant/.elasticbeanstalk/aws_credential_file
+ApplicationName=cbn
+DevToolsEndpoint=git.elasticbeanstalk.eu-west-1.amazonaws.com
+EnvironmentName=cbn-beta
+Region=eu-west-1
