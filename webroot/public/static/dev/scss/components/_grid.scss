@@ -1,9 +1,7 @@
-
 /* Grid */
 .grid {
     display: block;
     margin-left: -$spacing-unit;
-
     letter-spacing: -0.31em; /* webkit */
     *letter-spacing: normal; /* reset IE < 8 */
     word-spacing: -0.43em; /* IE < 8 && gecko */

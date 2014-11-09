@@ -1,4 +1,3 @@
-
 .font-default {
   font-family: sans-serif;
 }
@@ -9,7 +8,6 @@ h1, .a {
     @include font-size(2.4);
     line-height:1.2;
     margin: 0 0 $spacing-unit-mini 0;
-    font-weight: lighter;
     text-transform: none;
     font-family: $heading-font-family;
 }

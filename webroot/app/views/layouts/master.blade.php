@@ -14,7 +14,7 @@
         <div class="header situated--half">
             <div class="grid">
                 <div class="g g-1-2">
-                    <div class="header__logo"><a href="{{ URL::route('home') }}"><strong>THINGSPACE</strong></a></div>
+                    <div class="header__logo"><a href="{{ URL::route('home') }}">Creative Business Network</a></div>
                 </div>
                 <div class="g g-1-2">
                     <div class="header__nav" id="nav">
@@ -36,21 +36,6 @@
 
         <div class="content">
             @yield('content')
-            -<br />
-            -<br />
-            -<br />
-            -<br />
-
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
         </div>
 
         <div class="footer situated">
