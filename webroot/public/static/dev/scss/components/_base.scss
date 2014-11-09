@@ -12,12 +12,15 @@ body {
     padding: 0;
     margin: 0;
 	background-color: $html-color;
+    font-family: 'Roboto', sans-serif;
 }
 .content {
     color: $text-color;
     background-color: $body-color;
     padding-left: $spacing-unit;
     padding-right: $spacing-unit;
+    /* while theres no content */
+    min-height: 800px;
 }
 .situated {
     padding-left: $spacing-unit;

@@ -2,10 +2,11 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" href="/static/{{ Config::get('app.version') }}/css/global.css" />
-        <title>CBN</title>
-        <meta name="description" content="CBN" />
+        <title>Creative Business Newtork</title>
+        <meta name="description" content="Creative Business network" />
         <meta name="viewport" content="width=device-width" />
+        <link rel="stylesheet" href="/static/{{ Config::get('app.version') }}/css/global.css" />
+        <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,300,900' rel='stylesheet' type='text/css'>
     </head>
     <body>
         <!--[if lt IE 9]>
@@ -38,8 +39,12 @@
             @yield('content')
         </div>
 
-        <div class="footer situated">
-            FOOTER
+        <div class="footer situated clearfix">
+            <p class="copyright">&copy; Creative Business Network 2014</p>
+            <ul class="legal list--unstyled">
+                <li><a href="#">Privacy policy</a></li>
+                <li><a href="#">Terms &amp; Conditions</a></li>
+            </ul>
         </div>
     </body>
 </html>
