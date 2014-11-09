@@ -2,29 +2,12 @@ img {
 	width: 100%;
 }
 
-.company .image {
-	float:left;
-	width: 31%;
-	margin-right: 2%;
-}
-
-.company .details {
-	width: 33%;
-	float:left;
-}
-
-.company .actions {
-	width: 34%;
-	float:left;
-	text-align: right;
-}
-
-.company .actions p {
+.company .details p {
 	padding:0;
 	margin:0;
 }
 
-.company .actions .description {
+.company .details .description {
 	padding:0;
 	margin:0 0 $spacing-unit-half 0;
 }
