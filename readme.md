@@ -46,7 +46,15 @@ It should fail as it can't find the database
 
 ### Database
 Goto http://localhost:8888/phpmyadmin
+Login details
+
+```
+username: root
+password: root
+```
+
 Create a new database named 'app'
+
 In the SSH command line, run:
 ```
 php artisan migrate
