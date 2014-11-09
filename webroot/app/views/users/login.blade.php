@@ -3,9 +3,9 @@
 @section('content')
     <div class="grid"><!--
     --><div class="g">
-            <h1>Login/Register</h1>
+            <h1>Log in</h1>
             @include('partials.messages')
-            <p>Enter your address and.... blah blah blah</p>
+            <p>Enter your email address and password to log in.</p>
             @include('partials.regin')
         </div><!--
     --></div>

@@ -1,7 +1,7 @@
 {{ Form::open(array('route' => 'login')) }}
     <!-- if there are login errors, show them here -->
     <p>
-        {{ Form::label('email', 'Email Address') }}
+        {{ Form::label('email', 'Email address') }}
         {{ Form::email('email', Input::old('email'), array('placeholder' => 'name@example.com')) }}
         {{ $errors->first('email') }}
     </p>

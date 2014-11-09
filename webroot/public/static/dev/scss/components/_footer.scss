@@ -1,4 +1,17 @@
 .footer {
     background: $html-color;
     color: $html-textcolor;
+    padding-top: $spacing-unit-half;
+}
+
+.legal li {
+	display: inline;
+}
+
+.copyright {
+	float:left;
+}
+
+.legal {
+	float:right;
 }
