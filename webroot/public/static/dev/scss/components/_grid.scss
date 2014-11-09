@@ -22,7 +22,7 @@
     width: 100%;
     letter-spacing: normal;
     word-spacing: normal;
-    padding-top: $spacing-unit;
+    padding-left: $spacing-unit;
 }
 .g-1-1 { width: 100%;}
 .g-1-2 { width: 50%;}
@@ -73,7 +73,7 @@
 }
 
 @media all and (min-width: pxtoem(976)) { /* 976px */
-  body {
+  .content {
     width: 976px;
     margin:0 auto;
   }
