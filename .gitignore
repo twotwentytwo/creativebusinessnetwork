@@ -10,3 +10,4 @@ webroot/composer.lock
 webroot/.env.*.php
 webroot/.env.php
 .DS_Store
+.elasticbeanstalk/aws_credential_file

@@ -110,6 +110,8 @@ Logout of the SSH box, and login again
 
 Navigate to /vagrant
 
+Ensure you are already logged into the account at https://cbn.signin.aws.amazon.com/console
+
 Visit https://aws-portal.amazon.com/gp/aws/securityCredentials and download the Access key and ID from users -> user -> Security credentials.
 Create a file at
 
