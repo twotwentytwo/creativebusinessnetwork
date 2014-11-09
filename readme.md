@@ -84,6 +84,7 @@ If there was an error (on windows) run this instead
 sudo npm install --no-bin-links
 ```
 
+```
 sudo npm install -g grunt-cli
 grunt
 ```
