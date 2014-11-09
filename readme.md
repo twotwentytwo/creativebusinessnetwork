@@ -101,10 +101,10 @@ USE download link from http://aws.amazon.com/code/6752709412171743 as LINKSPACE
 wget --quiet LINKSPACE
 sudo apt-get install unzip
 unzip -qq AWS-ElasticBeanstalk-CLI-*.zip
-sudo mkdir /usr/local/aws
 sudo cp AWS-ElasticBeanstalk-CLI-*/ /aws -r
-export PATH=$PATH:/aws/elasticbeanstalk/eb/linux/python2.7/
+export PATH=$PATH:/aws/eb/linux/python2.7/
 rm -rf AWS-ElasticBeanstalk-CLI-*
+sudo chmod -R 777 /aws
 ```
 Logout of the SSH box, and login again
 
