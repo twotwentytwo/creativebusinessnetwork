@@ -13,9 +13,7 @@
             <p class="url"><a href="http://compostcreative.com">http://twotwentytwo.co.uk</a></p>
             <p class="telephone">0208 5467384</p>
             <p class="address">London</p>
-            <ul class="recommend">
-                <li><a href="#" class="btn">Recommend</a></li>
-            </ul>
+            
         </div>
     </div>
 
