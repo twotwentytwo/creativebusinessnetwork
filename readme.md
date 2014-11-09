@@ -78,8 +78,14 @@ sudo npm cache clean -f
 sudo npm install -g n
 sudo n stable
 sudo npm install
+```
+If there was an error (on windows) run this instead
+```
+sudo npm install --no-bin-links
+```
+
 sudo npm install -g grunt-cli
-grunt watch
+grunt
 ```
 
 =====
@@ -92,19 +98,43 @@ USE download link from http://aws.amazon.com/code/6752709412171743 as LINKSPACE
 
 ```
 wget --quiet LINKSPACE
+sudo apt-get install unzip
 unzip -qq AWS-ElasticBeanstalk-CLI-*.zip
 sudo mkdir /usr/local/aws
-sudo rsync -a --no-o --no-g AWS-ElasticBeanstalk-CLI-*/ /usr/local/aws/elasticbeanstalk/
-sudo export PATH=$PATH:/usr/local/aws/elastcibeanstalk/eb/linux/python2.7/
+sudo cp AWS-ElasticBeanstalk-CLI-*/ /aws -r
+export PATH=$PATH:/aws/elasticbeanstalk/eb/linux/python2.7/
+rm -rf AWS-ElasticBeanstalk-CLI-*
+```
+Logout of the SSH box, and login again
+
+Navigate to /vagrant
+
+Visit https://aws-portal.amazon.com/gp/aws/securityCredentials and download the Access key and ID from users -> user -> Security credentials.
+Create a file at
+
+```
+/home/vagrant/.elasticbeanstalk/aws_credential_file
+```
+It should contain the following
+```
+AWSAccessKeyId=AAAAACCCCESSKEYIDAAA
+AWSSecretKey=SSSSSSSECRETKEYFROMYOURDOWNLOAD
 ```
 
-Push to AWS
+#### Install Python
+```
+sudo apt-get install python-pip
+sudo pip install boto
+export PYTHONPATH=/usr/local/lib/python2.7/site-packages
+```
 
-
-
-
+#### Push changes
+```
+eb push
+```
 
 ===
+## Useful Credentials
 
 http://localhost:8888   - homepage
 
