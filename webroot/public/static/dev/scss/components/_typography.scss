@@ -20,9 +20,7 @@ h3, .c {
     @include font-size(1.5);
     line-height:1.2;
     margin: 0 0 $spacing-unit-mini 0;
-    font-weight: normal;
     font-family: $heading-font-family;
-    text-transform: none;
 }
 h4, .d {
     font-weight: bold;
