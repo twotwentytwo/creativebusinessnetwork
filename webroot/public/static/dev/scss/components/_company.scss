@@ -1,4 +1,4 @@
-.contact p {
+.details p {
 	padding: 0;
 	margin: 0;
 }
@@ -6,4 +6,20 @@
 .details .description {
 	padding:0;
 	margin:0 0 $spacing-unit-half 0;
+}
+
+.members {
+	margin-top: $spacing-unit;	
+}
+
+.recommend {
+	list-style: none;
+	padding:0;
+	margin:$spacing-unit-half 0 0 0;
+}
+
+.recommend a {
+	background: $html-color;
+	color: $body-color;
+	text-decoration: none;
 }

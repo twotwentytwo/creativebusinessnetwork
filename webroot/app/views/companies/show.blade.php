@@ -1,11 +1,6 @@
 @extends('layouts.master')
 
 @section('content')
-    <div class="grid">
-        <div class="g">
-            
-        </div>
-    </div>
     @if ($data->divisions_count)
         <div class="grid">
             <div class="g">
@@ -21,7 +16,7 @@
         </div>
     @endif
     @if ($data->show_users)
-        <div class="grid">
+        <div class="grid clearfix">
             <div class="image g g-m-1-3">
                 <img src="http://compostcreative.com/img/template/sharing.png" class="company_image" />
             </div>
@@ -34,29 +29,18 @@
                         {{ $data->company->name }}
                 </h1>
                 <p class="description">We are a creative studio producing visual effects and animation for TV, film and web. We love to bring stories &amp; ideas to life.</p>
-                <ul>
-                    <li><a href="#">Recommend</a></li>
-                    <li><a href="#">Join</a></li>
+                <p class="url"><a href="http://compostcreative.com">http://compostcreative.com</a></p>
+                <p class="telephone">0208 5467384</p>
+                <p class="address">London</p>
+                <ul class="recommend">
+                    <li><a href="#" class="btn">Recommend</a></li>
                 </ul>
             </div>
         </div>
     @endif
     @if ($data->show_users)
         <div class="grid">
-            <div class="g contact">
-                <h2>Contact details</h3>
-                <p class="url"><a href="http://compostcreative.com">http://compostcreative.com</a></p>
-                <p class="email"><a href="mailto:info@compostcreative.com">info@compostcreative.com</a></p>
-                <p class="telephone">0208 5467384</p>
-                <p class="twitter">@compostcreative</p>
-                <p class="address">Buzzer 9<br>24-26 Shacklewell Lane<br>London<br>E8 2EZ</p>
-                
-            </div>
-        </div>
-    @endif
-    @if ($data->show_users)
-        <div class="grid">
-            <div class="g">
+            <div class="g members">
                 <h2>Members</h2>
                 <ul>
                     @foreach($data->users_in_company as $user_in_company)
