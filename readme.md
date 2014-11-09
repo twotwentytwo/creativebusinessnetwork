@@ -32,8 +32,17 @@ $ php composer install
 ```
 
 ### Setup timezone
+```
 sudo vi /etc/php5/apache2/php.ini
+```
+Search for date.timezone - uncomment it and change the line to
+```
 date.timezone = "Europe/London"
+```
+
+The application should now attempt to load at http://localhost:8888.
+It should fail as it can't find the database
+
 
 ### Database
 Goto http://localhost:8888/phpmyadmin
