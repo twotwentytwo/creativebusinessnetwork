@@ -1,6 +1,7 @@
 @extends('layouts.master')
 @section('content')
-    <h1>Styleguide</h1>
+
+<h1>Styleguide</h1>
 
 <div class="prose">
     <p>This styleguide lists all the components that make up this website. It is used in development to ensure everything is consistant and minimise redundancy.</p>
@@ -167,7 +168,7 @@
     </ul>
     <code><pre>&lt;ul class="list--unstyled"&gt;&lt;li&gt;Item&lt;/li&gt;&lt;li&gt;Item&lt;/li&gt;&lt;/ul&gt;</pre></code>
 
-    <p>An inline list:</p>
+    
     <ul class="list--inline">
         <li>Something</li>
         <li>Another thing</li>
@@ -175,8 +176,31 @@
     </ul>
     <code><pre>&lt;ul class="list--inline"&gt;&lt;li&gt;Item&lt;/li&gt;&lt;li&gt;Item&lt;/li&gt;&lt;/ul&gt;</pre></code>
 
+    <h2>Objects</h2>
 
+    <p>Company</p>
 
-    
+    <div class="grid clearfix">
+        <div class="image g g-m-1-4">
+            <img src="http://compostcreative.com/img/template/sharing.png" class="company_image" />
+        </div>
+        <div class="details g g-m-3-4">
+            <h1>Compost Creative</h1>
+            <p class="description">We are a creative studio producing visual effects and animation for TV, film and web. We love to bring stories &amp; ideas to life.</p>
+            <p class="location">London</p>
+            <ul class="action list--inline">
+                <li><a href="#" class="btn">Recommend</a></li>
+                <li><a href="#" class="btn">Join</a></li>
+                <li><a href="#" class="btn">Collaborate</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <p>User</p>
+
+    <p>Update</p>
+
+    <p>Recommendation</p>
+
 </div>
 @stop

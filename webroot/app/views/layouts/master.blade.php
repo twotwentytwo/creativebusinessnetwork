@@ -40,10 +40,23 @@
             </div>
             <div class="footer situated clearfix">
                 <p class="copyright">&copy; Creative Business Network 2014</p>
+                <p>Current time: {{ date('F j, Y, g:i A') }}  </p>
+                <p>Now (according to Carbon): {{ Carbon::now()->toDateTimeString() }}</p>
+                <?
+                    Cache::add('stored_now', Carbon::now(), 1);
+                    if (Cache::has('stored_now')) {
+                        $time = Cache::get('stored_now')->toDateTimeString();
+                    } else {
+                        $time = 'Nothing yet';
+                    }
+                ?>
+                <p>Time in cache: {{ $time }}</p>
+                
                 <ul class="legal list--unstyled">
                     <li><a href="#">Privacy policy</a></li>
                     <li><a href="#">Terms &amp; Conditions</a></li>
                 </ul>
+
             </div>
        
     </body>

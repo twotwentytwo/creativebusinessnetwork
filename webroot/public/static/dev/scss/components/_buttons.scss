@@ -1,6 +1,8 @@
 .btn {
-  background: #ccc;
+  background: $html-color;
   border: 0;
   border-radius: 2px;
   padding: 6px;
+  text-decoration: none;
+  color: $html-textcolor;
 }

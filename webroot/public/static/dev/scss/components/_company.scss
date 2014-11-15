@@ -5,21 +5,71 @@
 
 .details .description {
 	padding:0;
-	margin:0 0 $spacing-unit-half 0;
+	margin:0;
 }
 
 .members {
 	margin-top: $spacing-unit;	
 }
 
-.recommend {
-	list-style: none;
-	padding:0;
-	margin:$spacing-unit-half 0 0 0;
+.details .location {
+	margin-bottom: $spacing-unit;	
 }
 
-.recommend a {
-	background: $html-color;
-	color: $body-color;
-	text-decoration: none;
+/* @todo - needs refactoring to grid */
+
+.updates {
+	list-style:none;
 }
+
+.update {
+	border-bottom: 1px solid $border-color;
+	margin-bottom: $spacing-unit;
+	padding-bottom: $spacing-unit;
+}
+
+.updates-input {
+	border: 1px solid $border-color;
+	width: 90%;
+	padding: $spacing-unit-half;	
+}
+
+.updates-container {
+	margin-top: $spacing-unit;
+}
+
+.update .image {
+	float:left;
+	width: 80px;
+	margin-right: $spacing-unit;
+}
+
+.update .update-content {
+	float:left;
+	width: 70%;
+}
+
+.update-content p {
+	margin:0;
+	padding:0;
+}
+
+.update-content .date {
+	margin-bottom:$spacing-unit;
+}
+
+.profile-image {
+	width: 80px;
+	height: 80px;
+	border: 1px solid #eaeaea;
+}
+
+.updates .image {
+	border: 1px solid #eaeaea;
+}
+
+.section {
+	margin-bottom: $spacing-unit;
+}
+
+/* @todo - needs refactoring to grid */

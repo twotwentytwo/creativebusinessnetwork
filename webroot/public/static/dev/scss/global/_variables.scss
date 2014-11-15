@@ -1,19 +1,35 @@
+/* Colours */
+
+/* body */
+
 $html-color: #000;
 $html-textcolor: #fff;
-
 $body-color: #fff;
-$text-color: #334;
+$comp-color: #c88715;
+$border-color: #999999;
+
+/* grid */
+
+$spacing-unit: 16px;
+$spacing-unit-half: 8px;
+$spacing-unit-mini: 4px;
+
+/* text */
+
+$text-color: #333;
+
+/* highlight */
+
+$highlight-color: #CDD1B6;
+
+/* subtle */
+
+/* links */
 
 $link-color: #999;
 $link-visited: #1563c8;
 
-$highlight-color: #CDD1B6;
-$comp-color: #c88715;
-
-$spacing-unit: 24px;
-$spacing-unit-half: 12px;
-$spacing-unit-mini: 6px;
+/* typography */
 
 $base-font-size: 16;
-
 $heading-font-family: 'Roboto', sans-serif;
