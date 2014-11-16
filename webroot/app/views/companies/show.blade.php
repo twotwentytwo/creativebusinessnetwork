@@ -96,10 +96,17 @@
                                     <img src="http://twotwentytwo.co.uk/dev/cbn/ps3.png" />
                                 </div>
                                 
-                                <ul class="action list--inline">
-                                    <li><a href="#" class="btn">Comment</a></li>
-                                    <li><a href="#" class="btn">View project</a></li>
-                                </ul>
+                                <div class="comment clearfix">
+                                    <div class="image">
+                                        <img src="http://compostcreative.com/img/template/sharing.png" class="company_image" />
+                                    </div>
+                                    <div class="update-content">
+                                    <p>Great project - looking forward to working together again!</p>
+                                    <p class="date"><a href="#">Nov 16 2014</a></p>
+                                    <ul class="action list--inline">
+                                        <li><a href="#" class="btn">Comment</a></li>
+                                    </ul>
+                                </div>
                             </div>
                         </li>
                         <!-- needs refactoring - layout purely for demo purposes -->
