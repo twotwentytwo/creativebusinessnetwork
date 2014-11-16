@@ -233,17 +233,29 @@
                         <img src="http://compostcreative.com/img/template/sharing.png" class="company_image" />
                     </div>
                     <div class="update-content">
-                    <p>Here's a comment</p>
-                    <p class="date"><a href="#">Nov 15 2014</a></p>
-                    <ul class="action list--inline">
-                        <li><a href="#" class="btn">Comment</a></li>
-                    </ul>
+                        <p>Here's a comment</p>
+                        <p class="date"><a href="#">Nov 15 2014</a></p>
+                        <ul class="action list--inline">
+                            <li><a href="#" class="btn">Comment</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </li>
     </ul>
 
     <h3>Recommendation</h3>
+
+    <p>A recommendation is made up of:</p>
+
+    <ul>
+        <li>The profile image of the company making the recommendation</li>
+        <li>The title of the company who made the recommendation with a link to their profile page</li>
+        <li>The title of the recommended company with a link to their profile page</li>
+        <li>Recommendation text</li>
+        <li>Date of recommendation</li>
+        <li>The recommendation is posted on both profile pages and features in both companies feed for maximum visibility</li>
+    </ul>
 
     <ul class="updates">
         <li class="update clearfix">
@@ -254,22 +266,23 @@
                 <p><a hef="#">DLM architects</a> recommended <a hef="#">Compost Creative</a></p>
                 <p class="date"><a href="#">Nov 14 2014</a></p>
                 <p class="quote">Compost Creative really helped us with our model work and we went on to win the pitch. We'd defintely work with them again.</p>
-                <div class="comment clearfix">
-                    <div class="image">
-                        <img src="http://compostcreative.com/img/template/sharing.png" class="company_image" />
-                    </div>
-                    <div class="update-content">
-                    <p>Nice one!</p>
-                    <p class="date"><a href="#">Nov 15 2014</a></p>
-                    <ul class="action list--inline">
-                        <li><a href="#" class="btn">Comment</a></li>
-                    </ul>
-                </div>
             </div>
         </li>
     </ul>
 
     <h3>Collaboration</h3>
+
+    <p>A collaboration is made up of:</p>
+
+    <ul>
+        <li>The profile image of the company making the collaboration</li>
+        <li>The title of the company who made the recommendation with a link to their profile page</li>
+        <li>The title of the recommended company with a link to their profile page</li>
+        <li>The title of the project with a link to the project page</li>
+        <li>Sample images from the project</li>
+        <li>Date of collaboration</li>
+        <li>The collaboration is posted on both profile pages and features in both companies feed for maximum visibility</li>
+    </ul>
 
     <ul class="updates">
         <li class="update clearfix">

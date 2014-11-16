@@ -82,7 +82,7 @@
                                 </ul>
                             </div>
                         </li>
-                        <!-- needs refactoring - layout purely for demo purposes -->
+                        <!-- needs refa ctoring - layout purely for demo purposes -->
                         <li class="update clearfix">
                             <div class="image">
                                 <img src="http://twotwentytwo.co.uk/dev/cbn/andsmith.png" class="company_image" />
@@ -101,11 +101,12 @@
                                         <img src="http://compostcreative.com/img/template/sharing.png" class="company_image" />
                                     </div>
                                     <div class="update-content">
-                                    <p>Great project - looking forward to working together again!</p>
-                                    <p class="date"><a href="#">Nov 16 2014</a></p>
-                                    <ul class="action list--inline">
-                                        <li><a href="#" class="btn">Comment</a></li>
-                                    </ul>
+                                        <p>Great project - looking forward to working together again!</p>
+                                        <p class="date"><a href="#">Nov 16 2014</a></p>
+                                        <ul class="action list--inline">
+                                            <li><a href="#" class="btn">Comment</a></li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </li>
@@ -123,11 +124,12 @@
                                         <img src="http://compostcreative.com/img/template/sharing.png" class="company_image" />
                                     </div>
                                     <div class="update-content">
-                                    <p>Nice one!</p>
-                                    <p class="date"><a href="#">Nov 15 2014</a></p>
-                                    <ul class="action list--inline">
-                                        <li><a href="#" class="btn">Comment</a></li>
-                                    </ul>
+                                        <p>Nice one!</p>
+                                        <p class="date"><a href="#">Nov 15 2014</a></p>
+                                        <ul class="action list--inline">
+                                            <li><a href="#" class="btn">Comment</a></li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </li>
