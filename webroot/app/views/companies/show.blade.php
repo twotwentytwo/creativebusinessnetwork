@@ -90,8 +90,15 @@
                             <div class="update-content">
                                 <p><a hef="#">&amp;SMITH</a> collaborated with <a hef="#">Compost Creative</a> on a <a href="#">branding for ITV's The People's Story</a>.</p>
                                 <p class="date"><a href="#">Nov 14 2014</a></p>
+                                <div class="showcase clearfix">
+                                    <img src="http://twotwentytwo.co.uk/dev/cbn/ps1.png" />
+                                    <img src="http://twotwentytwo.co.uk/dev/cbn/ps2.png" />
+                                    <img src="http://twotwentytwo.co.uk/dev/cbn/ps3.png" />
+                                </div>
+                                
                                 <ul class="action list--inline">
                                     <li><a href="#" class="btn">Comment</a></li>
+                                    <li><a href="#" class="btn">View project</a></li>
                                 </ul>
                             </div>
                         </li>
