@@ -246,17 +246,6 @@
 
     <h3>Recommendation</h3>
 
-    <p>A recommendation is made up of:</p>
-
-    <ul>
-        <li>The profile image of the company making the recommendation</li>
-        <li>The title of the company who made the recommendation with a link to their profile page</li>
-        <li>The title of the recommended company with a link to their profile page</li>
-        <li>Recommendation text</li>
-        <li>Date of recommendation</li>
-        <li>The recommendation is posted on both profile pages and features in both companies feed for maximum visibility</li>
-    </ul>
-
     <ul class="updates">
         <li class="update clearfix">
             <div class="image">
@@ -271,18 +260,6 @@
     </ul>
 
     <h3>Collaboration</h3>
-
-    <p>A collaboration is made up of:</p>
-
-    <ul>
-        <li>The profile image of the company making the collaboration</li>
-        <li>The title of the company who made the recommendation with a link to their profile page</li>
-        <li>The title of the recommended company with a link to their profile page</li>
-        <li>The title of the project with a link to the project page</li>
-        <li>Sample images from the project</li>
-        <li>Date of collaboration</li>
-        <li>The collaboration is posted on both profile pages and features in both companies feed for maximum visibility</li>
-    </ul>
 
     <ul class="updates">
         <li class="update clearfix">
