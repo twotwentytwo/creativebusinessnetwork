@@ -178,7 +178,9 @@
 
     <h2>Objects</h2>
 
-    <p>Company</p>
+    <p>Here are the building blocks of CBN. Below are examples of social objects and how they connect to each other. </p>
+
+    <h3>Company</h3>
 
     <div class="grid clearfix">
         <div class="image g g-m-1-4">
@@ -190,17 +192,101 @@
             <p class="location">London</p>
             <ul class="action list--inline">
                 <li><a href="#" class="btn">Recommend</a></li>
-                <li><a href="#" class="btn">Join</a></li>
+                <li><a href="#" class="btn">Connect</a></li>
                 <li><a href="#" class="btn">Collaborate</a></li>
             </ul>
         </div>
     </div>
 
-    <p>User</p>
+    <h3>Update</h3>
 
-    <p>Update</p>
+    <ul class="updates">
+        <!-- needs refactoring - layout purely for demo purposes -->
+        <li class="update clearfix">
+            <!-- needs refactoring - layout purely for demo purposes -->
+            <div class="image">
+                <img src="http://compostcreative.com/img/template/sharing.png" class="company_image" />
+            </div>
+            <div class="update-content">
+                <p>For all you Angkor Wat / Lazer lovers out there... Here's a link to Episode 2 of <a href="#">#JungleAtlantis</a>. <a href="#">#LidarLidarLidar</a> <a href="#">#VFX</a></p>
+                <p class="date"><a href="#">Nov 16 2014</a></p>
+                <ul class="action list--inline">
+                    <li><a href="#" class="btn">Comment</a></li>
+                </ul>
+            </div>
+        </li>
+    </ul>
 
-    <p>Recommendation</p>
+    <h3>Update with comment</h3>
 
-</div>
+    <ul class="updates">
+        <li class="update clearfix">
+            <div class="image">
+                <img src="http://compostcreative.com/img/template/sharing.png" class="company_image" />
+            </div>
+            <div class="update-content">
+                <p>For all you Angkor Wat / Lazer lovers out there... Here's a link to Episode 2 of <a href="#">#JungleAtlantis</a>. <a href="#">#LidarLidarLidar</a> <a href="#">#VFX</a></p>
+                <p class="date"><a href="#">Nov 14 2014</a></p>
+                
+                <div class="comment clearfix">
+                    <div class="image">
+                        <img src="http://compostcreative.com/img/template/sharing.png" class="company_image" />
+                    </div>
+                    <div class="update-content">
+                    <p>Here's a comment</p>
+                    <p class="date"><a href="#">Nov 15 2014</a></p>
+                    <ul class="action list--inline">
+                        <li><a href="#" class="btn">Comment</a></li>
+                    </ul>
+                </div>
+            </div>
+        </li>
+    </ul>
+
+    <h3>Recommendation</h3>
+
+    <ul class="updates">
+        <li class="update clearfix">
+            <div class="image">
+                <img src="http://twotwentytwo.co.uk/dev/cbn/dlm.png" class="company_image" />
+            </div>
+            <div class="update-content">
+                <p><a hef="#">DLM architects</a> recommended <a hef="#">Compost Creative</a></p>
+                <p class="date"><a href="#">Nov 14 2014</a></p>
+                <p class="quote">Compost Creative really helped us with our model work and we went on to win the pitch. We'd defintely work with them again.</p>
+                <div class="comment clearfix">
+                    <div class="image">
+                        <img src="http://compostcreative.com/img/template/sharing.png" class="company_image" />
+                    </div>
+                    <div class="update-content">
+                    <p>Nice one!</p>
+                    <p class="date"><a href="#">Nov 15 2014</a></p>
+                    <ul class="action list--inline">
+                        <li><a href="#" class="btn">Comment</a></li>
+                    </ul>
+                </div>
+            </div>
+        </li>
+    </ul>
+
+    <h3>Collaboration</h3>
+
+    <ul class="updates">
+        <li class="update clearfix">
+            <div class="image">
+                <img src="http://twotwentytwo.co.uk/dev/cbn/andsmith.png" class="company_image" />
+            </div>
+            <div class="update-content">
+                <p><a hef="#">&amp;SMITH</a> collaborated with <a hef="#">Compost Creative</a> on a <a href="#">branding for ITV's The People's Story</a>.</p>
+                <p class="date"><a href="#">Nov 14 2014</a></p>
+                <div class="showcase clearfix">
+                    <img src="http://twotwentytwo.co.uk/dev/cbn/ps1.png" />
+                    <img src="http://twotwentytwo.co.uk/dev/cbn/ps2.png" />
+                    <img src="http://twotwentytwo.co.uk/dev/cbn/ps3.png" />
+                </div>
+            </div>
+        </li>
+    </ul>
+
+    
 @stop
