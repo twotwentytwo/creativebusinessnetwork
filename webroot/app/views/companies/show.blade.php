@@ -26,7 +26,7 @@
                 <p class="location">London</p>
                 <ul class="action list--inline">
                     <li><a href="#" class="btn">Recommend</a></li>
-                    <li><a href="#" class="btn">Business Card</a></li>
+                    <li><a href="#" class="btn">Connect</a></li>
                     <li><a href="#" class="btn">Collaborate</a></li>
                 </ul>
             </div>
@@ -46,12 +46,12 @@
                     </ul>
                 </div>
                 <div class="section">
-                    <h2>Followers</h2>
+                    <h2>Connections</h2>
                     <ul class="followers list--inline">
                         <li class="follower"><a href="#"><img src="http://twotwentytwo.co.uk/dev/cbn/andsmith.png" class="profile-image" /></a><li>
                         <li class="follower"><a href="#"><img src="http://twotwentytwo.co.uk/dev/cbn/fisforfonts.png" class="profile-image" /></a><li>
                         <li class="follower"><a href="#"><img src="http://twotwentytwo.co.uk/dev/cbn/baileybrown.png" class="profile-image" /></a><li>
-                        <li class="follower"><a href="#"><img src="http://twotwentytwo.co.uk/dev/cbn/robwilliams.png" class="profile-image" /></a><li>
+                        <li class="follower"><a href="#"><img src="http://twotwentytwo.co.uk/dev/cbn/resonate.png" class="profile-image" /></a><li>
                         <li class="follower"><a href="#"><img src="http://twotwentytwo.co.uk/dev/cbn/dlm.png" class="profile-image" /></a><li>
                         <li class="follower"><a href="#"><img src="http://twotwentytwo.co.uk/dev/cbn/silentstudios.png" class="profile-image" /></a><li>
                         <li class="follower"><a href="#"><img src="http://twotwentytwo.co.uk/dev/cbn/lotteandbloom.png" class="profile-image" /></a><li>
@@ -79,7 +79,6 @@
                                 <p class="date"><a href="#">Nov 16 2014</a></p>
                                 <ul class="action list--inline">
                                     <li><a href="#" class="btn">Comment</a></li>
-                                    <li><a href="#" class="btn">Share</a></li>
                                 </ul>
                             </div>
                         </li>
@@ -89,11 +88,10 @@
                                 <img src="http://twotwentytwo.co.uk/dev/cbn/andsmith.png" class="company_image" />
                             </div>
                             <div class="update-content">
-                                <p><a hef="#">&amp;SMITH</a> collaborated with <a hef="#">Compost Creative</a> on a <a href="#">branding for ITV's The People's Story</a>. Check out the project here. <a href="#">#branding</a> <a href="#">#peoplestory</a></p>
+                                <p><a hef="#">&amp;SMITH</a> collaborated with <a hef="#">Compost Creative</a> on a <a href="#">branding for ITV's The People's Story</a>.</p>
                                 <p class="date"><a href="#">Nov 14 2014</a></p>
                                 <ul class="action list--inline">
                                     <li><a href="#" class="btn">Comment</a></li>
-                                    <li><a href="#" class="btn">Share</a></li>
                                 </ul>
                             </div>
                         </li>
@@ -103,41 +101,20 @@
                                 <img src="http://twotwentytwo.co.uk/dev/cbn/dlm.png" class="company_image" />
                             </div>
                             <div class="update-content">
-                                <p><a hef="#">DLM architects</a> recommend <a hef="#">Compost Creative</a>. Thanks for a great piece of work on our showreel. Great work! <a href="#">#compostcreative</a></p>
+                                <p><a hef="#">DLM architects</a> recommended <a hef="#">Compost Creative</a></p>
                                 <p class="date"><a href="#">Nov 14 2014</a></p>
-                                <ul class="action list--inline">
-                                    <li><a href="#" class="btn">Comment</a></li>
-                                    <li><a href="#" class="btn">Share</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                        <!-- needs refactoring - layout purely for demo purposes -->
-                        <li class="update clearfix">
-                            <div class="image">
-                                <img src="http://compostcreative.com/img/template/sharing.png" class="company_image" />
-                            </div>
-                            <div class="update-content">
-                                <p>We had the amazing opportunity of working on the latest Unicef commercial. <a href="#">#unicef</a> <a href="#">#andrex</a></p>
-                                <p class="date"><a href="#">Nov 12 2014</a></p>
-                                <ul class="action list--inline">
-                                    <li><a href="#" class="btn">Comment</a></li>
-                                    <li><a href="#" class="btn">Share</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                        <!-- needs refactoring - layout purely for demo purposes -->
-                        <li class="update clearfix">
-                            <!-- needs refactoring - layout purely for demo purposes -->
-                            <div class="image">
-                                <img src="http://compostcreative.com/img/template/sharing.png" class="company_image" />
-                            </div>
-                            <div class="update-content">
-                                <p>Here's our <a href="#">#MakingOf</a> video for ITV's <a href="#">#ThePeoplesStory</a>. Which shows how we recreated WW1 shots of London from the air</p>
-                                <p class="date"><a href="#">Nov 05 2014</a></p>
-                                <ul class="action list--inline">
-                                    <li><a href="#" class="btn">Comment</a></li>
-                                    <li><a href="#" class="btn">Share</a></li>
-                                </ul>
+                                <p class="quote">Compost Creative really helped us with our model work and we went on to win the pitch. We'd defintely work with them again.</p>
+                                <div class="comment clearfix">
+                                    <div class="image">
+                                        <img src="http://compostcreative.com/img/template/sharing.png" class="company_image" />
+                                    </div>
+                                    <div class="update-content">
+                                    <p>Nice one!</p>
+                                    <p class="date"><a href="#">Nov 15 2014</a></p>
+                                    <ul class="action list--inline">
+                                        <li><a href="#" class="btn">Comment</a></li>
+                                    </ul>
+                                </div>
                             </div>
                         </li>
                     </ul>
