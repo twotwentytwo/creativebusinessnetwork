@@ -13,6 +13,9 @@ class Company extends Base {
         'id',
         'name',
         'url_word',
+        'short_description',
+        'long_description',
+        'location',
         'created_by',
         'created_at',
         'updated_at',
@@ -71,6 +74,72 @@ class Company extends Base {
             return $this->url_word;
         }
         return $this->url_key();
+    }
+
+
+    public function setUrlWord($word)
+    {
+        $this->url_word = $word;
+        return true;
+    }
+
+    public function setName($name)
+    {
+        $this->name = $name;
+        return true;
+    }
+
+    public function setShortDescription($short_description)
+    {
+        $this->short_description = $short_description;
+        return true;
+    }
+
+    public function setLongDescription($long_description)
+    {
+        $this->long_description = $long_description;
+        return true;
+    }
+
+    public function setLocation($location)
+    {
+        $this->location = $location;
+        return true;
+    }
+
+    public function hasLocation()
+    {
+        return (
+        (isset($this->location) && !empty($this->location))
+        );
+    }
+
+    public function hasShortDescription()
+    {
+        return (
+            (isset($this->short_description) && !empty($this->short_description))
+        );
+    }
+
+    public function hasDescription()
+    {
+        return (
+            (isset($this->short_description) && !empty($this->short_description)) ||
+            (isset($this->long_description) && !empty($this->long_description))
+        );
+    }
+
+    public function getLongestDescription()
+    {
+        if (isset($this->long_description) && !empty($this->long_description)) {
+            return $this->long_description;
+        }
+
+        if (isset($this->short_description) && !empty($this->short_description)) {
+            return $this->short_description;
+        }
+
+        return null;
     }
 
 }

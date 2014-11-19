@@ -83,6 +83,8 @@ class CompaniesController extends BaseController {
             );
         }
 
+        $this->data->visitor_can_edit = $this->checkUserCanEdit();
+
         // users in company
         $this->data->users_in_company = UserInCompany::findActiveUsersByCompany($this->data->company);
         $this->data->show_users = false;
@@ -209,4 +211,95 @@ class CompaniesController extends BaseController {
             ->with('success', $message);
     }
 
+
+    public function editAction($key = null)
+    {
+        if (!$this->getCompany($key)) {
+            return View::make('home.404')
+                ->with(array('data' => $this->data));
+        }
+
+        if (!$this->checkUserCanEdit()) {
+            return View::make('home.404')
+                ->with(array('data' => $this->data));
+        }
+
+        return View::make('companies.edit')
+            ->with(array('data' => $this->data));
+    }
+
+
+    public function doEdit($key = null)
+    {
+        if (!$this->getCompany($key)) {
+            return View::make('home.404')
+                ->with(array('data' => $this->data));
+        }
+
+        if (!$this->checkUserCanEdit()) {
+            return View::make('home.404')
+                ->with(array('data' => $this->data));
+        }
+
+        // validate the info, create rules for the inputs
+        $rules = array(
+            'url_word'    => 'required|alphaNum',
+            'name' => 'required'
+        );
+
+        // run the validation rules on the inputs from the form
+        $validator = Validator::make(Input::all(), $rules);
+
+        // if the validator fails, redirect back to the form
+        if ($validator->fails()) {
+            $message_type = 'flash_error';
+            $message = 'Please check the form';
+        } else {
+            $name = Input::get('name');
+            $url_word = Input::get('url_word');
+            $short_description = Input::get('short_description');
+            $long_description = Input::get('long_description');
+            $location = Input::get('location');
+
+            // to do - check the URL Word doesn't already exist
+            $this->data->company->setUrlWord($url_word);
+
+            $this->data->company->setName($name);
+            $this->data->company->setShortDescription($short_description);
+            $this->data->company->setLongDescription($long_description);
+            $this->data->company->setLocation($location);
+
+            $this->data->company->save();
+
+            $message = 'Saved';
+            $message_type = 'flash_ok';
+
+        }
+
+
+        return Redirect::route('companies_edit', array('key' => $this->data->company->url_word))
+            ->with($message_type, $message)
+            ->withErrors($validator) // send back all errors to the login form
+            ->withInput(Input::all()); // send back the input so that we can repopulate the form
+
+    }
+
+    protected function checkUserCanEdit()
+    {
+        $user = Auth::user();
+        if ($user->isAdmin()) {
+            return true;
+        }
+
+        $this->data->user_in_company = UserInCompany::findByUserAndCompany(
+            $user,
+            $this->data->company
+        );
+
+        if ($this->data->user_in_company) {
+            return $this->data->user_in_company->isAdmin();
+        }
+        return false;
+
+    }
 }

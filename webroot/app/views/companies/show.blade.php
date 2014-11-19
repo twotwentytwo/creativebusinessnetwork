@@ -21,9 +21,19 @@
                 <img src="http://compostcreative.com/img/template/sharing.png" class="company_image" />
             </div>
             <div class="details g g-m-3-4">
-                <h1>Compost Creative</h1>
-                <p class="description">We are a creative studio producing visual effects and animation for TV, film and web. We love to bring stories &amp; ideas to life.</p>
-                <p class="location">London</p>
+                <h1>Compost Creative
+                @if ($data->visitor_can_edit)
+                    <a href="{{ URL::route('companies_edit', array(
+                          'key' => $data->company->url_word
+                      )) }}">EDIT</a>
+                @endif
+                </h1>
+                @if ($data->company->hasDescription())
+                <p class="description">{{ $data->company->getLongestDescription() }}</p>
+                @endif
+                @if ($data->company->hasLocation())
+                    <p class="location">{{ $data->company->location }}</p>
+                @endif
                 <ul class="action list--inline">
                     <li><a href="#" class="btn">Recommend</a></li>
                     <li><a href="#" class="btn">Connect</a></li>

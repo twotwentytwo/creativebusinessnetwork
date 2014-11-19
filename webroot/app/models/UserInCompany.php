@@ -125,7 +125,10 @@ class UserInCompany extends Base {
             ->where(self::TABLE . '.company_id', '=', $company->id)
             ->where(self::TABLE . '.user_id', '=', $user->id)
             ->first();
-        return self::setup($result);
+        if (!empty($result)) {
+            return self::setup($result);
+        }
+        return null;
     }
 
     public static function isUserCompanyAdmin($user, $company)

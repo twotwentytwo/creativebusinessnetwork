@@ -78,6 +78,14 @@ Route::get(
     )
 );
 
+Route::get(
+    '/{key}/edit',
+    array(
+        'uses' => 'CompaniesController@editAction',
+        'as' => 'companies_edit'
+    )
+)->before('auth');
+
 
 // post roots
 Route::post(
@@ -102,3 +110,6 @@ Route::post(
         'as' => 'company_membership'
     )
 );
+
+Route::post(
+    '/{key}/edit',    array('uses' => 'CompaniesController@doEdit'))->before('auth');

@@ -7,9 +7,9 @@
             @include('partials.messages')
             <ul>
                 @foreach($data->companies as $company)
-                    <li><a href="{{ URL::route('companies_show', array(
-                        'key' => $company->url_entity()
-                    )) }}">{{ $company->name }}</a></li>
+                    <li class="list--unstyled">
+                        @include('partials.company-summary', array('company' => $company, 'data' => $data))
+                    </li>
                 @endforeach
             </ul>
         </div><!--
