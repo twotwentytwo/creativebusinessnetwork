@@ -21,6 +21,12 @@
                 </p>
 
                 <p>
+                    {{ Form::label('image', 'Logo') }}
+                    {{ Form::text('image',(Input::old('image')) ?: $data->company->imagev) }}
+                    {{ $errors->first('image') }}
+                </p>
+
+                <p>
                     {{ Form::label('location', 'Location') }}
                     {{ Form::text('location',(Input::old('location')) ?: $data->company->location) }}
                     {{ $errors->first('location') }}

@@ -18,10 +18,12 @@
     @if ($data->show_users)
         <div class="grid clearfix">
             <div class="image g g-m-1-4">
-                <img src="http://compostcreative.com/img/template/sharing.png" class="company_image" />
+                @if ($data->company->hasImage())
+                    <img src="{{ $data->company->getImage() }}" alt="" class="company_image" />
+                @endif
             </div>
             <div class="details g g-m-3-4">
-                <h1>Compost Creative
+                <h1>{{ $data->company->name }}
                 @if ($data->visitor_can_edit)
                     <a href="{{ URL::route('companies_edit', array(
                           'key' => $data->company->url_word

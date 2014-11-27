@@ -19,7 +19,8 @@ class Company extends Base {
         'created_by',
         'created_at',
         'updated_at',
-        'parent_company'
+        'parent_company',
+        'image'
     );
 
     public static function Register($companydata)
@@ -139,6 +140,25 @@ class Company extends Base {
             return $this->short_description;
         }
 
+        return null;
+    }
+
+    public function hasImage()
+    {
+        return (isset($this->image) && !empty($this->image));
+    }
+
+    public function setImage($image)
+    {
+        $this->image = $image;
+        return true;
+    }
+
+    public function getImage()
+    {
+        if ($this->hasImage()) {
+            return $this->image;
+        }
         return null;
     }
 

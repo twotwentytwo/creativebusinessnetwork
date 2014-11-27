@@ -259,6 +259,7 @@ class CompaniesController extends BaseController {
             $url_word = Input::get('url_word');
             $short_description = Input::get('short_description');
             $long_description = Input::get('long_description');
+            $image = Input::get('image');
             $location = Input::get('location');
 
             // to do - check the URL Word doesn't already exist
@@ -266,6 +267,7 @@ class CompaniesController extends BaseController {
 
             $this->data->company->setName($name);
             $this->data->company->setShortDescription($short_description);
+            $this->data->company->setImage($image);
             $this->data->company->setLongDescription($long_description);
             $this->data->company->setLocation($location);
 
